@@ -1,28 +1,37 @@
-import './ProfileCard.css';
+import {
+  Biography,
+  Container,
+  MainTitle,
+  MainTitleName,
+  ProfileImage,
+  ProfileImageContainer,
+  SubTitle,
+  TitleContainer,
+} from './ProfileCardStyle';
 
 const ProfileCard = () => {
   return (
-    <div className="profile-container">
-      <div className="title-div">
-        <h1>
-          Hi, I'm <span>Eduardo Valencio</span>
-        </h1>
+    <Container>
+      <TitleContainer>
+        <MainTitle>
+          Hi, I'm <MainTitleName>Eduardo Valencio</MainTitleName>
+        </MainTitle>
 
-        <h2>Web Developer Full-Stack</h2>
-      </div>
+        <SubTitle>Web Developer Full-Stack</SubTitle>
+      </TitleContainer>
 
-      <div className="img-container center">
-        <img src="/images/Profile_Eduardo_Valencio.jpeg" />
-      </div>
+      <ProfileImageContainer className="center">
+        <ProfileImage src="/images/Profile_Eduardo_Valencio.jpeg" />
+      </ProfileImageContainer>
 
-      <p>
+      <Biography>
         I am a passionate Software Developer 🚀 from Egypt 🇪🇬. with more than 5
         years experience delivering tech solutions, avid programmer and fast
         learner, obsessed with details and quality, always trying to improve
         development process and code quality, I love simple and elegant
         solutions for every problem.
-      </p>
-    </div>
+      </Biography>
+    </Container>
   );
 };
 

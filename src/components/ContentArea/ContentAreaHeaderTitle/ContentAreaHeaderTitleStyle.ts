@@ -42,6 +42,8 @@ export const Title = styled.h3<IStyleProps>`
     props.isFooter ? 'var(--primary-color)' : 'var(--secondary-color)'};
 
   font-size: 32px;
+  font-family: 'IBM Plex Mono';
+  margin: 0;
 
   @media (max-width: 1500px) {
     font-size: 28px;
