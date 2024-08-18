@@ -6,8 +6,8 @@
   background-color: var(--primary-color);
   height: 75px;
   width: 100%;
-  padding: 0 10%;
-
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
   filter: drop-shadow(5px 5px 10px #0000002d);
 }
 
@@ -37,4 +37,14 @@ h2 {
 .options .selected {
   font-weight: bolder;
   font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+  .options {
+    display: none;
+  }
+
+  .header-container {
+    padding: 0 10px;
+  }
 }

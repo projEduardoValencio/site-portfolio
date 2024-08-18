@@ -13,7 +13,7 @@ const HeaderComponent = () => {
 
   return (
     <>
-      <div className="header-container">
+      <div className="main-content-padding header-container">
         <div className="content-header">
           <h2>[DevEd]</h2>
         </div>
