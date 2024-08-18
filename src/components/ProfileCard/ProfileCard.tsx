@@ -1,23 +1,58 @@
+import { TypeAnimation } from 'react-type-animation';
 import {
   Biography,
   Container,
   MainTitle,
-  MainTitleName,
   ProfileImage,
   ProfileImageContainer,
   SubTitle,
   TitleContainer,
 } from './ProfileCardStyle';
+import { useEffect, useState } from 'react';
 
 const ProfileCard = () => {
+  const [showSubTitle, setShowSubTitle] = useState<boolean>(false);
+
+  useEffect(() => {
+    setTimeout(() => setShowSubTitle(true), 2000);
+  }, []);
+
   return (
     <Container>
       <TitleContainer>
         <MainTitle>
-          Hi, I'm <MainTitleName>Eduardo Valencio</MainTitleName>
+          Hi, I'm
+          <TypeAnimation
+            className="name-animation"
+            sequence={[' Eduardo Valencio']}
+            cursor={false}
+            speed={20}
+          />
         </MainTitle>
 
-        <SubTitle>Web Developer Full-Stack</SubTitle>
+        {showSubTitle ? (
+          <SubTitle>
+            <TypeAnimation
+              className="name-animation"
+              sequence={[
+                'Web Developer Full-Stack',
+                3000,
+                '.NET | ReactJS | Angular',
+                2000,
+                'AWS | VueJS | Spring Boot',
+                2000,
+                'DevOps',
+                1000,
+              ]}
+              cursor={true}
+              repeat={Infinity}
+              wrapper="span"
+              speed={60}
+            />
+          </SubTitle>
+        ) : (
+          <SubTitle />
+        )}
       </TitleContainer>
 
       <ProfileImageContainer className="center">

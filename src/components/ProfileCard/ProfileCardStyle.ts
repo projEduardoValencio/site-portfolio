@@ -43,10 +43,24 @@ export const SubTitle = styled.h2`
   letter-spacing: -1px;
   font-size: 32px;
   line-height: 32px;
+  min-height: 32px;
 
   @media (max-width: 470px) {
     font-size: 20px;
     letter-spacing: 1px;
+    min-height: 20px;
+  }
+
+  & span {
+    font-weight: normal;
+    letter-spacing: -1px;
+    font-size: 32px;
+    line-height: 32px;
+
+    @media (max-width: 470px) {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
   }
 `;
 

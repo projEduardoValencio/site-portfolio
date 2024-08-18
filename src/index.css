@@ -34,3 +34,8 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.name-animation {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
