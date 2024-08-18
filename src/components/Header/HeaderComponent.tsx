@@ -1,10 +1,16 @@
 import { useCallback, useState } from 'react';
 import ButtonType from '../../models/types/ButtonType';
 import ButtonComponent from '../Button/ButtonComponent';
-import './HeaderComponent.css';
+import {
+  Container,
+  ContainerLogo,
+  LogoText,
+  Option,
+  OptionsNav,
+} from './HeaderComponentStyle';
 
 const HeaderComponent = () => {
-  const [selected, setSelected] = useState<number>(0);
+  const [selection, setSelected] = useState<number>(0);
   const options = ['Home', 'About', 'Projects', 'Contact'];
 
   const handleMouseOver = useCallback((index: number) => {
@@ -13,27 +19,27 @@ const HeaderComponent = () => {
 
   return (
     <>
-      <div className="main-content-padding header-container">
-        <div className="content-header">
-          <h2>[DevEd]</h2>
-        </div>
+      <Container className="main-content-padding">
+        <ContainerLogo>
+          <LogoText>[DevEd]</LogoText>
+        </ContainerLogo>
 
-        <div className="center options">
-          {options.map((el, index) => (
-            <span
+        <OptionsNav>
+          {options.map((text, index) => (
+            <Option
               onMouseOver={() => handleMouseOver(index)}
-              className={index === selected ? 'selected' : ''}
-              key={index + el}
+              selected={selection === index}
+              key={index + text}
             >
-              {el}
-            </span>
+              {text}
+            </Option>
           ))}
-        </div>
+        </OptionsNav>
 
         <div className="center">
           <ButtonComponent text="Download CV" type={ButtonType.Fill} />
         </div>
-      </div>
+      </Container>
     </>
   );
 };
