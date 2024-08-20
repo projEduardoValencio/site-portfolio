@@ -1,5 +1,6 @@
 import ContentArea from '../components/ContentArea/ContentArea';
 import HeaderComponent from '../components/Header/HeaderComponent';
+import IconList from '../components/IconsList/IconList';
 import ProfileCard from '../components/ProfileCard/ProfileCard';
 import './Home.css';
 
@@ -11,7 +12,7 @@ const HomeComponent = () => {
         <ProfileCard />
 
         <ContentArea title="STACK PRINCIPAL">
-          <div></div>
+          <IconList/>
         </ContentArea>
       </main>
     </>
