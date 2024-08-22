@@ -1,5 +1,5 @@
 .main-content-padding {
-  padding: 150px 20%;
+  padding: 100px 20%;
 }
 
 @media (max-width: 1400px) {
@@ -23,5 +23,5 @@
 main {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 50px;
 }
