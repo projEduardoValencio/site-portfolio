@@ -1,4 +1,13 @@
 import styled from 'styled-components';
+import { Card } from '../styled-components/CardStyle';
+
+export const ProjectContainerCard = styled(Card)`
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    transform: scale(1.01) translateY(-5px);
+  }
+`;
 
 export const ContentGrid = styled.div`
   display: grid;
@@ -61,7 +70,7 @@ export const Description = styled.div`
     overflow: auto;
 
     font-weight: 400;
-    font-size: 1.15rem;
+    font-size: 20px;
 
     @media (max-width: 925px) {
       font-size: 1rem;
@@ -119,7 +128,16 @@ export const Button = styled.button<IButtonProps>`
   height: 43px;
   border-radius: 5px;
   border: 1px solid var(--secondary-color);
-  background: ${(props) => (props.fill ? 'var(--secondary-color)' : 'none')};
+  background: ${(props) =>
+    props.fill ? 'var(--secondary-color)' : 'var(--primary-color)'};
   color: ${(props) =>
     props.fill ? 'var(--primary-color)' : 'var(--secondary-color)'};
+
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    filter: drop-shadow(5px 5px 10px #00000030);
+  }
 `;

@@ -1,6 +1,6 @@
 import { IProject } from '../../models/interfaces/IProject';
-import { Card } from '../styled-components/CardStyle';
 import {
+  ProjectContainerCard,
   Button,
   ButtonDiv,
   ContentGrid,
@@ -16,7 +16,7 @@ interface IProps {
 }
 const ProjectCard = ({ project }: IProps) => {
   return (
-    <Card
+    <ProjectContainerCard
       style={{
         padding: '30px 40px',
         flexDirection: 'column',
@@ -44,7 +44,7 @@ const ProjectCard = ({ project }: IProps) => {
           <Button fill>Source Code</Button>
         </ButtonDiv>
       </ContentGrid>
-    </Card>
+    </ProjectContainerCard>
   );
 };
 
