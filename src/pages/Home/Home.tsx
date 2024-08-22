@@ -23,6 +23,8 @@ const HomeComponent = () => {
           <ContentArea title="PREVIOUS EXPERIENCE">
             <IconList iconUrlList={previousExperienceIconList} />
           </ContentArea>
+
+          <ContentArea title="POJECTS">H</ContentArea>
         </div>
       </main>
     </>
