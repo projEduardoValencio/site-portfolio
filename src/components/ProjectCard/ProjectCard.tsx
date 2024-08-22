@@ -17,15 +17,19 @@ interface IProps {
 const ProjectCard = ({ project }: IProps) => {
   return (
     <Card
-      style={{ padding: '20px', flexDirection: 'column', alignItems: 'center' }}
+      style={{
+        padding: '30px 40px',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
     >
       <TitleMobile>{project.title}</TitleMobile>
       <ContentGrid>
         <img src={project.projectImageUrl} />
 
-        <Title>{project.title}</Title>
+        <Title className="padding-horizontal">{project.title}</Title>
 
-        <Description>
+        <Description className="padding-horizontal">
           <p dangerouslySetInnerHTML={{ __html: project.description }} />
 
           <TagsDiv>

@@ -7,7 +7,12 @@ export const ContentGrid = styled.div`
   grid-column-gap: 1.5rem;
   grid-row-gap: 1rem;
 
-  grid-template-rows: 30px;
+  grid-template-rows: 40px;
+
+  h2 {
+    font-family: 'IBM Plex Sans Thai Looped';
+    margin-top: -10px;
+  }
 
   img {
     grid-row: span 2;
@@ -19,6 +24,10 @@ export const ContentGrid = styled.div`
     @media (max-width: 1400px) {
       height: 250px;
     }
+  }
+
+  & > .padding-horizontal {
+    padding: 0 1rem;
   }
 
   @media (max-width: 925px) {
@@ -50,6 +59,13 @@ export const Description = styled.div`
     text-indent: 3rem;
     text-align: justify;
     overflow: auto;
+
+    font-weight: 400;
+    font-size: 1.15rem;
+
+    @media (max-width: 925px) {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -77,10 +93,11 @@ export const TagsDiv = styled.div`
 `;
 
 export const Tag = styled.div`
-  padding: 0.2rem 1rem;
+  padding: 0.1rem 0.7rem;
   border-radius: 20px;
   background: var(--secondary-color);
   color: var(--primary-color);
+  font-size: 0.8rem;
 `;
 
 export const ButtonDiv = styled.div`
