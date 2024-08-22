@@ -82,7 +82,7 @@ export const ProfileImage = styled.img`
   width: 280px;
   height: 300px;
   border-radius: 25px;
-  filter: drop-shadow(5px 5px 10px #0000002d);
+  filter: drop-shadow(5px 5px 10px #00000022);
   object-fit: cover;
 `;
 

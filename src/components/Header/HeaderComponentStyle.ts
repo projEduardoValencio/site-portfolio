@@ -14,7 +14,7 @@ export const Container = styled.div`
   width: 100%;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
-  filter: drop-shadow(5px 5px 10px #0000002d);
+  filter: drop-shadow(5px 5px 10px #00000018);
 
   @media (max-width: 768px) {
     padding: 0 10px;

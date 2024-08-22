@@ -5,7 +5,14 @@
   font-family: IBM Plex Sans Thai Looped;
   --primary-color: #f1f1f1;
   --secondary-color: #2d2d2d;
-  --tablet-size: 768px;
+  --acent-color: #eeeeee;
+  --acent-color-rgb: 238, 238, 238;
+  /*  -- Dark Mode
+  --primary-color: #2d2d2d;
+  --secondary-color: #f1f1f1;
+  --acent-color: #3d3d3d;
+  --acent-color-rgb: 61, 61, 61;
+  */
 }
 
 *,

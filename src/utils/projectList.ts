@@ -3,8 +3,11 @@ import { IProject } from '../models/interfaces/IProject';
 export const projectList: IProject[] = [
   {
     title: 'Conta Conjunta',
-    description:
-      'Project 1 descriptionA tech solutions, avid programmer and fast learner, obsessed with details and quality, always trying to improve development process and code quality, I love simple and elegant solutions for every problem.',
+    description: `
+    Project 1 descriptionA tech solutions, avid programmer and fast learner, obsessed with details and quality, 
+    Project 1 descriptionA tech solutions, avid programmer and fast learner, obsessed with details and quality, 
+    Project 1 descriptionA tech solutions, avid programmer and fast learner, obsessed with details and quality, 
+      `,
     projectImageUrl:
       'https://via.placeholder.com/150https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGgB7GLq62w4RlgKtkkSnyxrLkHjICzZGUIA&s',
     tags: ['full-stack', 'c#', 'angular', 'aws', 'sql'],

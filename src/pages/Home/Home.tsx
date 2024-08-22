@@ -2,6 +2,8 @@ import ContentArea from '../../components/ContentArea/ContentArea';
 import HeaderComponent from '../../components/Header/HeaderComponent';
 import IconList from '../../components/IconsList/IconList';
 import ProfileCard from '../../components/ProfileCard/ProfileCard';
+import ProjectCardList from '../../components/ProjectCardList/ProjectCardList';
+import { projectList } from '../../utils/projectList';
 import {
   mainStackIconList,
   previousExperienceIconList,
@@ -24,7 +26,9 @@ const HomeComponent = () => {
             <IconList iconUrlList={previousExperienceIconList} />
           </ContentArea>
 
-          <ContentArea title="POJECTS">H</ContentArea>
+          <ContentArea title="POJECTS">
+            <ProjectCardList projects={projectList} />
+          </ContentArea>
         </div>
       </main>
     </>
