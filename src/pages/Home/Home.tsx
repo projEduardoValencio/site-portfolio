@@ -2,7 +2,10 @@ import ContentArea from '../../components/ContentArea/ContentArea';
 import HeaderComponent from '../../components/Header/HeaderComponent';
 import IconList from '../../components/IconsList/IconList';
 import ProfileCard from '../../components/ProfileCard/ProfileCard';
-import { mainStackIconList } from '../../utils/staticIconList';
+import {
+  mainStackIconList,
+  previousExperienceIconList,
+} from '../../utils/staticIconList';
 import './Home.css';
 
 const HomeComponent = () => {
@@ -12,9 +15,15 @@ const HomeComponent = () => {
       <main className="main-content-padding">
         <ProfileCard />
 
-        <ContentArea title="STACK PRINCIPAL">
-          <IconList iconUrlList={mainStackIconList} />
-        </ContentArea>
+        <div className="show-area">
+          <ContentArea title="MAIN STACK">
+            <IconList iconUrlList={mainStackIconList} />
+          </ContentArea>
+
+          <ContentArea title="PREVIOUS EXPERIENCE">
+            <IconList iconUrlList={previousExperienceIconList} />
+          </ContentArea>
+        </div>
       </main>
     </>
   );

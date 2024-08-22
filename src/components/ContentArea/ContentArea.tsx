@@ -5,6 +5,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 50px;
+
+  @media (max-width: 925px) {
+    gap: 20px;
+  }
 `;
 
 interface IProps {

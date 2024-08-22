@@ -23,5 +23,15 @@
 main {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 100px;
+
+  @media (max-width: 925px) {
+    gap: 30px;
+  }
+}
+
+.show-area {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
