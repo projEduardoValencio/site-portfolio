@@ -16,13 +16,7 @@ interface IProps {
 }
 const ProjectCard = ({ project }: IProps) => {
   return (
-    <ProjectContainerCard
-      style={{
-        padding: '30px 40px',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-    >
+    <ProjectContainerCard>
       <TitleMobile>{project.title}</TitleMobile>
       <ContentGrid>
         <img src={project.projectImageUrl} />

@@ -2,10 +2,18 @@ import styled from 'styled-components';
 import { Card } from '../styled-components/CardStyle';
 
 export const ProjectContainerCard = styled(Card)`
+  padding: 30px 40px;
+  flex-direction: column;
+  align-items: center;
+
   transition: all 0.1s ease-in-out;
 
   &:hover {
     transform: scale(1.01) translateY(-5px);
+  }
+
+  @media (max-width: 925px) {
+    padding: 10px 10px;
   }
 `;
 
