@@ -2,16 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 :root {
-  font-family: IBM Plex Sans Thai Looped;
+  font-family: 'IBM Plex Sans Thai Looped';
   --primary-color: #f1f1f1;
   --secondary-color: #2d2d2d;
-  --acent-color: #eeeeee;
-  --acent-color-rgb: 238, 238, 238;
+  --accent-color: #eeeeee;
+  --accent-color-rgb: 238, 238, 238;
   /*  -- Dark Mode
   --primary-color: #2d2d2d;
   --secondary-color: #f1f1f1;
-  --acent-color: #3d3d3d;
-  --acent-color-rgb: 61, 61, 61;
+  --accent-color: #3d3d3d;
+  --accent-color-rgb: 61, 61, 61;
   */
 }
 

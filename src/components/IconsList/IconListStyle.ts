@@ -18,10 +18,10 @@ export const SliderWrapper = styled.div`
     content: '';
     background: linear-gradient(
       90deg,
-      rgba(var(--acent-color-rgb), 0.486) 0%,
+      rgba(var(--accent-color-rgb), 0.486) 0%,
       rgba(255, 255, 255, 0) 30%,
       rgba(255, 255, 255, 0) 80%,
-      rgba(var(--acent-color-rgb), 0.486) 100%
+      rgba(var(--accent-color-rgb), 0.486) 100%
     );
     height: 100%;
     position: absolute;

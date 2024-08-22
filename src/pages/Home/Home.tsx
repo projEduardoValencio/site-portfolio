@@ -9,10 +9,11 @@ import {
   previousExperienceIconList,
 } from '../../utils/staticIconList';
 import './Home.css';
+import { ThemeProvider } from '../../contexts/ThemeContext';
 
 const HomeComponent = () => {
   return (
-    <>
+    <ThemeProvider>
       <HeaderComponent />
       <main className="main-content-padding">
         <ProfileCard />
@@ -31,7 +32,7 @@ const HomeComponent = () => {
           </ContentArea>
         </div>
       </main>
-    </>
+    </ThemeProvider>
   );
 };
 
