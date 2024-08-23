@@ -129,7 +129,7 @@ export const ButtonDiv = styled.div`
 `;
 
 interface IButtonProps {
-  fill?: boolean;
+  fillButton?: boolean;
 }
 export const Button = styled.button<IButtonProps>`
   width: 145px;
@@ -137,9 +137,9 @@ export const Button = styled.button<IButtonProps>`
   border-radius: 5px;
   border: 1px solid var(--secondary-color);
   background: ${(props) =>
-    props.fill ? 'var(--secondary-color)' : 'var(--primary-color)'};
+    props.fillButton ? 'var(--secondary-color)' : 'var(--primary-color)'};
   color: ${(props) =>
-    props.fill ? 'var(--primary-color)' : 'var(--secondary-color)'};
+    props.fillButton ? 'var(--primary-color)' : 'var(--secondary-color)'};
 
   transition: all 0.1s ease-in-out;
 

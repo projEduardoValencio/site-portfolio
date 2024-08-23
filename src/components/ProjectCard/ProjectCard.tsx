@@ -35,7 +35,7 @@ const ProjectCard = ({ project }: IProps) => {
 
         <ButtonDiv>
           <Button>Go To App</Button>
-          <Button fill>Source Code</Button>
+          <Button fillButton>Source Code</Button>
         </ButtonDiv>
       </ContentGrid>
     </ProjectContainerCard>

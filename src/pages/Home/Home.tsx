@@ -10,6 +10,7 @@ import {
 } from '../../utils/staticIconList';
 import './Home.css';
 import { ThemeProvider } from '../../contexts/ThemeContext';
+import ToggleThemeButton from '../../components/ToggleThemeButton/ToggleTemeButton';
 
 const HomeComponent = () => {
   return (
@@ -32,6 +33,8 @@ const HomeComponent = () => {
           </ContentArea>
         </div>
       </main>
+
+      <ToggleThemeButton />
     </ThemeProvider>
   );
 };
