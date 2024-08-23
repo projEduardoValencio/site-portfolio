@@ -33,7 +33,9 @@ export const ThemeProvider = ({ children }: IProps) => {
 
   useEffect(() => {
     loadThemeFromLocalStorage().then((loadedTheme: ITheme | null) => {
-      setTheme(loadedTheme ?? Themes.light);
+      const currentTheme = loadedTheme ?? Themes.light;
+      setTheme(currentTheme);
+      setCoreTheme(currentTheme);
       setLoadingTheme(false);
     });
   }, []);
