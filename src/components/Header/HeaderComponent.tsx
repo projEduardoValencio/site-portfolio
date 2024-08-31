@@ -128,7 +128,7 @@ const HeaderComponent = ({ sectionRefs }: IProps) => {
           ))}
         </OptionsNav>
 
-        <OptionsMenu visible={visible}>
+        <OptionsMenu $visible={visible}>
           {options.map((section, index) => (
             <Option
               onClick={() => handleClick(section)}

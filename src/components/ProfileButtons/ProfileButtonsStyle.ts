@@ -3,7 +3,7 @@ import { ITheme } from '../../models/interfaces/ITheme';
 import { Themes } from '../../utils/themeConfig';
 
 interface IStyleProps {
-  isFooter?: boolean;
+  $isFooter?: boolean;
   theme: ITheme;
 }
 
@@ -11,19 +11,25 @@ export const Container = styled.div<IStyleProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: ${({ isFooter }) => (isFooter ? 'center' : 'start')};
+  justify-content: ${({ $isFooter }) => ($isFooter ? 'center' : 'start')};
   gap: 25px;
 
   img {
-    filter: ${({ isFooter, theme }) => {
-      if (isFooter && theme === Themes.dark) {
+    filter: ${({ $isFooter, theme }) => {
+      if ($isFooter && theme === Themes.dark) {
         return '';
-      } else if (isFooter && theme.primaryColor === Themes.light.primaryColor) {
-        return 'invert(1) brightness(2)';
-      } else if (!isFooter && theme.primaryColor === Themes.dark.primaryColor) {
+      } else if (
+        $isFooter &&
+        theme.primaryColor === Themes.light.primaryColor
+      ) {
         return 'invert(1) brightness(2)';
       } else if (
-        !isFooter &&
+        !$isFooter &&
+        theme.primaryColor === Themes.dark.primaryColor
+      ) {
+        return 'invert(1) brightness(2)';
+      } else if (
+        !$isFooter &&
         theme.primaryColor === Themes.light.primaryColor
       ) {
         return '';

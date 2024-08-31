@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import ContentAreaHeaderTitle from './ContentAreaHeaderTitle/ContentAreaHeaderTitle';
 
 interface IStyleProps {
-  isFooter?: boolean;
+  $isFooter?: boolean;
 }
 interface IAttrProps {
   id: string;
@@ -13,9 +13,9 @@ const Container = styled.div.attrs<IAttrProps>(({ id }) => ({}))<IStyleProps>`
   flex-direction: column;
   gap: 50px;
   background-color: ${(props) =>
-    props.isFooter ? 'var(--secondary-color)' : 'var(--primary-color)'};
+    props.$isFooter ? 'var(--secondary-color)' : 'var(--primary-color)'};
   color: ${(props) =>
-    props.isFooter ? 'var(--primary-color)' : 'var(--secondary-color)'};
+    props.$isFooter ? 'var(--primary-color)' : 'var(--secondary-color)'};
 
   @media (max-width: 925px) {
     gap: 20px;
@@ -24,15 +24,15 @@ const Container = styled.div.attrs<IAttrProps>(({ id }) => ({}))<IStyleProps>`
 
 interface IProps {
   title: string;
-  isFooter?: boolean;
+  $isFooter?: boolean;
   children: React.ReactNode;
   id: string;
 }
 
-const ContentArea = ({ title, children, isFooter, id }: IProps) => {
+const ContentArea = ({ title, children, $isFooter, id }: IProps) => {
   return (
-    <Container id={id} isFooter={isFooter}>
-      <ContentAreaHeaderTitle title={title} isFooter={isFooter} />
+    <Container id={id} $isFooter={$isFooter}>
+      <ContentAreaHeaderTitle title={title} $isFooter={$isFooter} />
       {children}
     </Container>
   );

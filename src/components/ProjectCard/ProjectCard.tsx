@@ -50,7 +50,7 @@ const ProjectCard = ({ project }: IProps) => {
               {t('button.go_to_app')}
             </Button>
           )}
-          <Button href={project.sourceProjectUrl} fillButton>
+          <Button href={project.sourceProjectUrl} $fillButton>
             {t('button.source_code')}
           </Button>
         </ButtonDiv>

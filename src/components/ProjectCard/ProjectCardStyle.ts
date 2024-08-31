@@ -131,7 +131,7 @@ export const ButtonDiv = styled.div`
 `;
 
 interface IButtonProps {
-  fillButton?: boolean;
+  $fillButton?: boolean;
 }
 interface IButtonAttrProps {
   href: string;
@@ -146,9 +146,9 @@ export const Button = styled.a.attrs<IButtonAttrProps>(({ href }) => ({
   border-radius: 5px;
   border: 1px solid var(--secondary-color);
   background: ${(props) =>
-    props.fillButton ? 'var(--secondary-color)' : 'var(--primary-color)'};
+    props.$fillButton ? 'var(--secondary-color)' : 'var(--primary-color)'};
   color: ${(props) =>
-    props.fillButton ? 'var(--primary-color)' : 'var(--secondary-color)'};
+    props.$fillButton ? 'var(--primary-color)' : 'var(--secondary-color)'};
 
   transition: all 0.1s ease-in-out;
   text-align: center;

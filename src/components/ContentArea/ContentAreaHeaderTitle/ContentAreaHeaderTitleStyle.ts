@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface IStyleProps {
-  isFooter?: boolean;
+  $isFooter?: boolean;
 }
 
 export const Container = styled.div`
@@ -18,7 +18,7 @@ export const Line = styled.hr<IStyleProps>`
   border: 0;
   height: 2px;
   background-color: ${(props) =>
-    props.isFooter ? 'var(--primary-color)' : 'var(--secondary-color)'};
+    props.$isFooter ? 'var(--primary-color)' : 'var(--secondary-color)'};
 
   margin: 20px 0;
 
@@ -39,7 +39,7 @@ export const Line = styled.hr<IStyleProps>`
 
 export const Title = styled.h3<IStyleProps>`
   color: ${(props) =>
-    props.isFooter ? 'var(--primary-color)' : 'var(--secondary-color)'};
+    props.$isFooter ? 'var(--primary-color)' : 'var(--secondary-color)'};
 
   font-size: 32px;
   font-family: 'IBM Plex Mono';

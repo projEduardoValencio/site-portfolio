@@ -3,13 +3,13 @@ import { Container, ProfileButton } from './ProfileButtonsStyle';
 import { ThemeContext } from '../../contexts/ThemeContext';
 
 interface IProps {
-  isFooter?: boolean;
+  $isFooter?: boolean;
 }
-const ProfileButtons = ({ isFooter }: IProps) => {
+const ProfileButtons = ({ $isFooter }: IProps) => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Container isFooter={isFooter} theme={theme}>
+    <Container $isFooter={$isFooter} theme={theme}>
       <ProfileButton href="https://github.com/projEduardoValencio">
         <img src="/icons/github.png" alt="GitHub" />
       </ProfileButton>

@@ -2,15 +2,15 @@ import { Container, Line, Title } from './ContentAreaHeaderTitleStyle';
 
 interface IProps {
   title: string;
-  isFooter?: boolean;
+  $isFooter?: boolean;
 }
 
-const ContentAreaHeaderTitle = ({ title, isFooter }: IProps) => {
+const ContentAreaHeaderTitle = ({ title, $isFooter }: IProps) => {
   return (
     <Container>
-      <Line isFooter={isFooter} />
-      <Title isFooter={isFooter}>{title}</Title>
-      <Line isFooter={isFooter} />
+      <Line $isFooter={$isFooter} />
+      <Title $isFooter={$isFooter}>{title}</Title>
+      <Line $isFooter={$isFooter} />
     </Container>
   );
 };

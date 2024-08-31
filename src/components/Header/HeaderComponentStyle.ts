@@ -69,7 +69,7 @@ export const Option = styled.span<IStyleOptionsNavProps>`
 `;
 
 interface IStyleOptionsMenuProps {
-  visible?: boolean;
+  $visible?: boolean;
 }
 const fadeIn = keyframes`
   from {
@@ -102,7 +102,7 @@ export const OptionsMenu = styled.div<IStyleOptionsMenuProps>`
   position: fixed;
   left: 0;
   top: 75px;
-  /* display: ${(props) => (props.visible ? 'flex' : 'none')}; */
+  /* display: ${(props) => (props.$visible ? 'flex' : 'none')}; */
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -112,12 +112,12 @@ export const OptionsMenu = styled.div<IStyleOptionsMenuProps>`
   text-align: center;
   padding: 50px;
   transition: visibility 0.5s linear, opacity 0.5s linear;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
-  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
+  visibility: ${(props) => (props.$visible ? 'visible' : 'hidden')};
 
   @media (min-width: 768px) {
     display: none;
   }
 
-  animation: ${(props) => (props.visible ? fadeIn : fadeOut)} 0.5s;
+  animation: ${(props) => (props.$visible ? fadeIn : fadeOut)} 0.5s;
 `;

@@ -89,7 +89,7 @@ const HomeComponent = () => {
       <footer className="footer-padding">
         <ContentArea
           id={sectionsId.contact}
-          isFooter
+          $isFooter
           title={t('content.contact')}
         >
           <div
@@ -100,7 +100,7 @@ const HomeComponent = () => {
               <b>eduardo.valencio.santos@gmail.com</b>
             </p>
 
-            <ProfileButtons isFooter />
+            <ProfileButtons $isFooter />
 
             <span>Design & Developed by Eduardo Valencio</span>
           </div>
