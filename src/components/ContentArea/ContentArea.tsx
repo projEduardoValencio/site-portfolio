@@ -4,11 +4,8 @@ import ContentAreaHeaderTitle from './ContentAreaHeaderTitle/ContentAreaHeaderTi
 interface IStyleProps {
   $isFooter?: boolean;
 }
-interface IAttrProps {
-  id: string;
-}
 
-const Container = styled.div.attrs<IAttrProps>(({ id }) => ({}))<IStyleProps>`
+const Container = styled.div<IStyleProps>`
   display: flex;
   flex-direction: column;
   gap: 50px;
