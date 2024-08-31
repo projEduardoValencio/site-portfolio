@@ -34,7 +34,11 @@ const ProjectCard = ({ project }: IProps) => {
         </Description>
 
         <ButtonDiv>
-          <Button>Go To App</Button>
+          {
+            project.applicationAppUrl && (
+              <Button>Go To App</Button>
+            )
+          }
           <Button fillButton>Source Code</Button>
         </ButtonDiv>
       </ContentGrid>

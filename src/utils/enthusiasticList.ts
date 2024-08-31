@@ -13,7 +13,6 @@ export const enthusiasticList: IProject[] = [
     tags: ['6502', 'assembly', 'atari', 'game', 'stella'],
     show: true,
     sourceProjectUrl: 'https://github.com',
-    applicationAppUrl: 'https://github.com',
   },
   {
     title: 'Phyllotaxis',
@@ -24,6 +23,5 @@ export const enthusiasticList: IProject[] = [
     tags: ['python', 'python-game', 'math'],
     show: true,
     sourceProjectUrl: 'https://github.com',
-    applicationAppUrl: 'https://github.com',
   },
 ];

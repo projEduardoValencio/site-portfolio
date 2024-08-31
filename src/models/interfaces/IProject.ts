@@ -5,5 +5,5 @@ export interface IProject {
   tags: string[];
   show: boolean;
   sourceProjectUrl: string;
-  applicationAppUrl: string;
+  applicationAppUrl?: string;
 }
