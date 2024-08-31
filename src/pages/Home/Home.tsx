@@ -14,34 +14,71 @@ import ToggleThemeButton from '../../components/ToggleThemeButton/ToggleTemeButt
 import { enthusiasticList } from '../../utils/enthusiasticList';
 import ProfileButtons from '../../components/ProfileButtons/ProfileButtons';
 import { useTranslation } from 'react-i18next';
+import { useEffect, useMemo, useRef } from 'react';
 
 const HomeComponent = () => {
   const { t } = useTranslation();
 
+  const sectionsId = useMemo(
+    () => ({
+      main: 'section-main',
+      stack: 'section-stack',
+      previousExp: 'section-previous-exp',
+      projects: 'section-projects',
+      enthusiastic: 'section-enthusiastic',
+      contact: 'section-contact',
+    }),
+    []
+  );
+
+  const sectionsRefs = {
+    main: useRef<HTMLElement | null>(null),
+    stack: useRef<HTMLElement | null>(null),
+    previousExp: useRef<HTMLElement | null>(null),
+    projects: useRef<HTMLElement | null>(null),
+    enthusiastic: useRef<HTMLElement | null>(null),
+    contact: useRef<HTMLElement | null>(null),
+  };
+
+  useEffect(() => {
+    sectionsRefs.main.current = document.getElementById(sectionsId.main);
+    sectionsRefs.stack.current = document.getElementById(sectionsId.stack);
+    sectionsRefs.previousExp.current = document.getElementById(
+      sectionsId.previousExp
+    );
+    sectionsRefs.projects.current = document.getElementById(
+      sectionsId.projects
+    );
+    sectionsRefs.enthusiastic.current = document.getElementById(
+      sectionsId.enthusiastic
+    );
+    sectionsRefs.contact.current = document.getElementById(sectionsId.contact);
+  }, [sectionsId]);
+
   return (
     <ThemeProvider>
-      <HeaderComponent />
+      <HeaderComponent sectionRefs={sectionsRefs} />
       <main className="main-content-padding">
-        <ProfileCard ref="section-main" />
+        <ProfileCard id={sectionsId.main} />
 
         <div className="show-area">
-          <ContentArea ref="section-stack" title={t('content.main_stack')}>
+          <ContentArea id={sectionsId.stack} title={t('content.main_stack')}>
             <IconList iconUrlList={mainStackIconList} />
           </ContentArea>
 
           <ContentArea
-            ref="section-previous-exp"
+            id={sectionsId.previousExp}
             title={t('content.previous_experience')}
           >
             <IconList iconUrlList={previousExperienceIconList} />
           </ContentArea>
 
-          <ContentArea ref="section-projects" title={t('content.projects')}>
+          <ContentArea id={sectionsId.projects} title={t('content.projects')}>
             <ProjectCardList projects={projectList} />
           </ContentArea>
 
           <ContentArea
-            ref="section-enthusiastic"
+            id={sectionsId.enthusiastic}
             title={t('content.enthusiastic')}
           >
             <ProjectCardList projects={enthusiasticList} />
@@ -51,7 +88,7 @@ const HomeComponent = () => {
 
       <footer className="footer-padding">
         <ContentArea
-          ref="section-contact"
+          id={sectionsId.contact}
           isFooter
           title={t('content.contact')}
         >

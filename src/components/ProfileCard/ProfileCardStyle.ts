@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface IAttrProps {
-  ref: string;
+  id: string;
 }
 export const Container = styled.div.attrs<IAttrProps>(({ ref }) => ({
   ref,
