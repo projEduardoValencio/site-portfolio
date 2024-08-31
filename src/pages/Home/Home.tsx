@@ -11,6 +11,7 @@ import {
 import './Home.css';
 import { ThemeProvider } from '../../contexts/ThemeContext';
 import ToggleThemeButton from '../../components/ToggleThemeButton/ToggleTemeButton';
+import { enthusiasticList } from '../../utils/enthusiasticList';
 
 const HomeComponent = () => {
   return (
@@ -30,6 +31,10 @@ const HomeComponent = () => {
 
           <ContentArea title="POJECTS">
             <ProjectCardList projects={projectList} />
+          </ContentArea>
+
+          <ContentArea title="ENTHUSIASTIC">
+            <ProjectCardList projects={enthusiasticList} />
           </ContentArea>
         </div>
       </main>
