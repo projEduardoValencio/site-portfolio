@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { IProject } from '../../models/interfaces/IProject';
 import {
   ProjectContainerCard,
@@ -15,6 +16,7 @@ interface IProps {
   project: IProject;
 }
 const ProjectCard = ({ project }: IProps) => {
+  const { t } = useTranslation();
   return (
     <ProjectContainerCard>
       <TitleMobile>{project.title}</TitleMobile>
@@ -34,12 +36,10 @@ const ProjectCard = ({ project }: IProps) => {
         </Description>
 
         <ButtonDiv>
-          {
-            project.applicationAppUrl && (
-              <Button>Go To App</Button>
-            )
-          }
-          <Button fillButton>Source Code</Button>
+          {project.applicationAppUrl && (
+            <Button>{t('button.go_to_app')}</Button>
+          )}
+          <Button fillButton>{t('button.source_code')}</Button>
         </ButtonDiv>
       </ContentGrid>
     </ProjectContainerCard>

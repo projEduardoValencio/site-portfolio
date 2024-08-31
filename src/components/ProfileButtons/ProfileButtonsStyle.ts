@@ -31,7 +31,7 @@ export const Container = styled.div<IStyleProps>`
     }};
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 770px) {
     width: 100%;
     justify-content: center;
   }

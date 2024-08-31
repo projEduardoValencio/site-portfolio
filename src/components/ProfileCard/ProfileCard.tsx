@@ -10,9 +10,11 @@ import {
 } from './ProfileCardStyle';
 import { useEffect, useState } from 'react';
 import ProfileButtons from '../ProfileButtons/ProfileButtons';
+import { useTranslation } from 'react-i18next';
 
 const ProfileCard = () => {
   const [showSubTitle, setShowSubTitle] = useState<boolean>(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     setTimeout(() => setShowSubTitle(true), 2000);
@@ -22,7 +24,7 @@ const ProfileCard = () => {
     <Container>
       <TitleContainer>
         <MainTitle>
-          Olá, eu sou
+          {t('profile.hello')}
           <TypeAnimation
             className="name-animation"
             sequence={[' Eduardo Valencio']}
@@ -36,7 +38,7 @@ const ProfileCard = () => {
             <TypeAnimation
               className="name-animation"
               sequence={[
-                'Web Developer Full-Stack',
+                t('developer'),
                 3000,
                 '.NET | ReactJS | Angular',
                 2000,
@@ -55,20 +57,13 @@ const ProfileCard = () => {
           <SubTitle />
         )}
       </TitleContainer>
-
       <ProfileImageContainer className="center">
         <ProfileImage src="/images/Profile_Eduardo_Valencio.jpeg" />
       </ProfileImageContainer>
 
       <Biography>
-        Sou um desenvolvedor Full-Stack e DevOps com experiência em uma
-        variedade de tecnologias, desde C# e TypeScript até Python e Java.
-        Especializado em criar aplicações web escaláveis e seguras, eu gosto de
-        unir front-end e back-end com uma arquitetura limpa, enquanto gerencio
-        pipelines CI/CD e infraestrutura em nuvem. Sempre em busca de novos
-        desafios e aprendizados, estou animado para explorar áreas como
-        Segurança da Informação, IoT, ML e Mobile.
-        <br /> <i>Vamos fazer algo incrível juntos!</i>
+        {t('profile.introduction_content')}
+        <br /> <i>{t('profile.introduction_end')}</i>
       </Biography>
 
       <ProfileButtons />

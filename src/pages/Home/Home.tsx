@@ -13,8 +13,11 @@ import { ThemeProvider } from '../../contexts/ThemeContext';
 import ToggleThemeButton from '../../components/ToggleThemeButton/ToggleTemeButton';
 import { enthusiasticList } from '../../utils/enthusiasticList';
 import ProfileButtons from '../../components/ProfileButtons/ProfileButtons';
+import { useTranslation } from 'react-i18next';
 
 const HomeComponent = () => {
+  const { t } = useTranslation();
+
   return (
     <ThemeProvider>
       <HeaderComponent />
@@ -22,31 +25,31 @@ const HomeComponent = () => {
         <ProfileCard />
 
         <div className="show-area">
-          <ContentArea title="MAIN STACK">
+          <ContentArea title={t('content.main_stack')}>
             <IconList iconUrlList={mainStackIconList} />
           </ContentArea>
 
-          <ContentArea title="PREVIOUS EXPERIENCE">
+          <ContentArea title={t('content.previous_experience')}>
             <IconList iconUrlList={previousExperienceIconList} />
           </ContentArea>
 
-          <ContentArea title="POJECTS">
+          <ContentArea title={t('content.projects')}>
             <ProjectCardList projects={projectList} />
           </ContentArea>
 
-          <ContentArea title="ENTHUSIASTIC">
+          <ContentArea title={t('content.enthusiastic')}>
             <ProjectCardList projects={enthusiasticList} />
           </ContentArea>
         </div>
       </main>
 
       <footer className="footer-padding">
-        <ContentArea isFooter title="CONTACT">
+        <ContentArea isFooter title={t('content.contact')}>
           <div
             style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}
           >
             <p>
-              Get in touch or shoot me an email directly on{' '}
+              {t('footer.get_in_touch')}{' '}
               <b>eduardo.valencio.santos@gmail.com</b>
             </p>
 

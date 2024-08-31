@@ -78,7 +78,7 @@ export const Description = styled.div`
     overflow: auto;
 
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
 
     @media (max-width: 925px) {
       font-size: 1rem;

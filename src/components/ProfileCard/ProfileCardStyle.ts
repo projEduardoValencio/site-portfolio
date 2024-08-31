@@ -7,11 +7,7 @@ export const Container = styled.div`
   gap: 10px;
   text-align: justify;
 
-  @media (max-width: 1015px) {
-    grid-template-columns: 60% 40%;
-  }
-
-  @media (max-width: 925px) {
+  @media (max-width: 1040px) {
     grid-template-columns: 1fr;
     text-align: center;
     justify-content: center;
@@ -72,7 +68,7 @@ export const ProfileImageContainer = styled.div`
   grid-row: span 2;
   justify-content: end;
 
-  @media (max-width: 925px) {
+  @media (max-width: 1040px) {
     grid-row: span 1;
     justify-content: center;
   }
@@ -87,7 +83,8 @@ export const ProfileImage = styled.img`
 `;
 
 export const Biography = styled.p`
-  font-size: 20px;
+  margin-bottom: 30px;
+  font-size: 18px;
   text-align: justify;
 
   @media (max-width: 470px) {
