@@ -9,6 +9,7 @@ import {
   TitleContainer,
 } from './ProfileCardStyle';
 import { useEffect, useState } from 'react';
+import ProfileButtons from '../ProfileButtons/ProfileButtons';
 
 const ProfileCard = () => {
   const [showSubTitle, setShowSubTitle] = useState<boolean>(false);
@@ -66,6 +67,8 @@ const ProfileCard = () => {
         development process and code quality, I love simple and elegant
         solutions for every problem.
       </Biography>
+
+      <ProfileButtons />
     </Container>
   );
 };

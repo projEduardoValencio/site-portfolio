@@ -12,6 +12,7 @@ import './Home.css';
 import { ThemeProvider } from '../../contexts/ThemeContext';
 import ToggleThemeButton from '../../components/ToggleThemeButton/ToggleTemeButton';
 import { enthusiasticList } from '../../utils/enthusiasticList';
+import ProfileButtons from '../../components/ProfileButtons/ProfileButtons';
 
 const HomeComponent = () => {
   return (
@@ -36,17 +37,23 @@ const HomeComponent = () => {
           <ContentArea title="ENTHUSIASTIC">
             <ProjectCardList projects={enthusiasticList} />
           </ContentArea>
-
         </div>
       </main>
 
-      <footer className='footer-padding'>
+      <footer className="footer-padding">
         <ContentArea isFooter title="CONTACT">
-          <p>
-          Get in touch or shoot me an email directly on <b>eduardo.valencio.santos@gmail.com</b>
-          </p>
+          <div
+            style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}
+          >
+            <p>
+              Get in touch or shoot me an email directly on{' '}
+              <b>eduardo.valencio.santos@gmail.com</b>
+            </p>
 
-          <span>Design & Developed by Eduardo Valencio</span>
+            <ProfileButtons isFooter />
+
+            <span>Design & Developed by Eduardo Valencio</span>
+          </div>
         </ContentArea>
       </footer>
 

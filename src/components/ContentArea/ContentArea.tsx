@@ -9,8 +9,10 @@ const Container = styled.div<IStyleProps>`
   display: flex;
   flex-direction: column;
   gap: 50px;
-  background-color: ${(props) => props.isFooter ? 'var(--secondary-color)' : 'var(--primary-color)'};
-  color: ${(props) => props.isFooter ? 'var(--primary-color)' : 'var(--secondary-color)'};
+  background-color: ${(props) =>
+    props.isFooter ? 'var(--secondary-color)' : 'var(--primary-color)'};
+  color: ${(props) =>
+    props.isFooter ? 'var(--primary-color)' : 'var(--secondary-color)'};
 
   @media (max-width: 925px) {
     gap: 20px;
