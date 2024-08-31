@@ -6,6 +6,7 @@ import {
   ContainerLogo,
   LogoText,
   Option,
+  OptionsMenu,
   OptionsNav,
 } from './HeaderComponentStyle';
 import { useTranslation } from 'react-i18next';
@@ -24,6 +25,7 @@ const HeaderComponent = ({ sectionRefs }: IProps) => {
   const [selection, setSelected] = useState<RefObject<HTMLElement>>(
     sectionRefs.main
   );
+  const [visible, setVisible] = useState(false);
   const { t } = useTranslation();
   const options = useMemo(
     () => [
@@ -106,7 +108,11 @@ const HeaderComponent = ({ sectionRefs }: IProps) => {
   return (
     <>
       <Container className="main-content-padding">
-        <ContainerLogo>
+        <ContainerLogo
+          onClick={() => {
+            setVisible((v) => !v);
+          }}
+        >
           <LogoText>[DevEd]</LogoText>
         </ContainerLogo>
 
@@ -121,6 +127,18 @@ const HeaderComponent = ({ sectionRefs }: IProps) => {
             </Option>
           ))}
         </OptionsNav>
+
+        <OptionsMenu visible={visible}>
+          {options.map((section, index) => (
+            <Option
+              onClick={() => handleClick(section)}
+              selected={selection === section.ref}
+              key={index + section.text}
+            >
+              {section.text}
+            </Option>
+          ))}
+        </OptionsMenu>
 
         <div className="center">
           <ButtonComponent text={t('download_cv')} type={ButtonType.Fill} />

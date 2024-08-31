@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 interface IStyleOptionsNavProps {
   selected?: boolean;
@@ -58,4 +58,58 @@ export const Option = styled.span<IStyleOptionsNavProps>`
   font-size: ${(props) => (props.selected ? '1.2em' : '1.1em')};
   font-weight: ${(props) => (props.selected ? 'bold' : 'normal')};
   width: 100%;
+`;
+
+interface IStyleOptionsMenuProps {
+  visible?: boolean;
+}
+const fadeIn = keyframes`
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+    display: flex;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    display: flex;
+  }
+`;
+
+const fadeOut = keyframes`
+  from {
+    transform: translateY(0);
+    opacity: 1;
+    display: flex;
+  }
+  to {
+    transform: translateY(-100px);
+    opacity: 0;
+    display: none;
+  }
+`;
+
+export const OptionsMenu = styled.div<IStyleOptionsMenuProps>`
+  z-index: 9;
+  position: fixed;
+  left: 0;
+  top: 75px;
+  /* display: ${(props) => (props.visible ? 'flex' : 'none')}; */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  backdrop-filter: blur(10px);
+  background-color: var(--primary-color);
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  transition: visibility 0.5s linear, opacity 0.5s linear;
+  opacity: ${(props) => (props.visible ? 1 : 0)};
+  visibility: ${(props) => (props.visible ? 'visible' : 'hidden')};
+
+  @media (min-width: 768px) {
+    display: none;
+  }
+
+  animation: ${(props) => (props.visible ? fadeIn : fadeOut)} 0.5s;
 `;
