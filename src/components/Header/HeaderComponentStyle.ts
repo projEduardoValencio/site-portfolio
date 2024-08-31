@@ -5,6 +5,9 @@ interface IStyleOptionsNavProps {
 }
 
 export const Container = styled.div`
+  z-index: 10;
+  position: fixed;
+  top: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

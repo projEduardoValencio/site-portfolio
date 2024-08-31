@@ -1,5 +1,6 @@
 .main-content-padding {
-  padding: 100px 20%;
+  padding: 200px 20%;
+  position: relative;
 }
 
 @media (max-width: 1400px) {
@@ -10,13 +11,13 @@
 
 @media (max-width: 925px) {
   .main-content-padding {
-    padding: 50px 10px;
+    padding: 100px 10px;
   }
 }
 
 @media (max-width: 425px) {
   .main-content-padding {
-    padding: 20px 10px;
+    padding: 90px 10px;
   }
 }
 
