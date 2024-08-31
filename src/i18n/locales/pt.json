@@ -24,7 +24,7 @@
     },
     "profile": {
       "hello": "Olá, eu sou",
-      "introduction_content": "Desenvolvedor Full-Stack e DevOps com experiência em uma         variedade de tecnologias, desde C# e TypeScript até Python e Java.         Especializado em criar aplicações web escaláveis e seguras, eu gosto de         unir front-end e back-end com uma arquitetura limpa, enquanto gerencio         pipelines CI/CD e infraestrutura em nuvem. Sempre em busca de novos         desafios e aprendizados, estou animado para explorar áreas como         Segurança da Informação, IoT, ML e Mobile.",
+      "introduction_content": "Desenvolvedor Full-Stack e DevOps com experiência em uma variedade de tecnologias como, C#, TypeScript, Python, PHP, C++ e Java. Especializado em criar aplicações web escaláveis e seguras, eu gosto de unir front-end e back-end com uma arquitetura limpa, enquanto gerencio pipelines CI/CD e infraestrutura em nuvem. Sempre em busca de novos desafios e aprendizados, estou animado para explorar áreas como Segurança da Informação, IoT, ML e Mobile.",
       "introduction_end": "Vamos fazer algo incrível juntos!"
     }
   }

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ThemeButton = styled.button`
+export const LocaleButton = styled.button`
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -8,9 +8,6 @@ export const ThemeButton = styled.button`
   color: var(--primary-color);
   filter: drop-shadow(5px 5px 10px #00000028);
   box-shadow: inset 0 0 4px #88888823;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,8 +21,9 @@ export const ThemeButton = styled.button`
   object {
     width: 30px;
     height: 30px;
+    fill: var(--primary-color);
 
-    #ic_fluent_dark_theme_24_regular {
+    sgv {
       fill: var(--primary-color);
     }
   }

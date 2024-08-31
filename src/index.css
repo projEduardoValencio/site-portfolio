@@ -21,6 +21,14 @@
   box-sizing: border-box;
 }
 
+button {
+  transition: linear 0.1s all;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
 h2 {
   font-family: IBM Plex Mono;
 }

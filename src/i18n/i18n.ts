@@ -9,6 +9,6 @@ export default i18n.use(initReactI18next).init({
     pt: { ...pt },
     en: { ...en },
   },
-  lng: 'pt',
+  lng: window.location.pathname === '/en' ? 'en' : 'pt',
   fallbackLng: 'pt',
 });

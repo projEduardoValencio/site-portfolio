@@ -30,6 +30,14 @@ export const LogoText = styled.h2`
   font-weight: bold;
   line-height: 0;
   margin: 0;
+
+  @media (max-width: 768px) {
+    transition: all 0.1s;
+    cursor: pointer;
+    &:hover {
+      font-size: 34px;
+    }
+  }
 `;
 
 export const ContainerLogo = styled.div`

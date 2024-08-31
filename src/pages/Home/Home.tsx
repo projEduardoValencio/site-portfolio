@@ -10,11 +10,11 @@ import {
 } from '../../utils/staticIconList';
 import './Home.css';
 import { ThemeProvider } from '../../contexts/ThemeContext';
-import ToggleThemeButton from '../../components/ToggleThemeButton/ToggleTemeButton';
 import { enthusiasticList } from '../../utils/enthusiasticList';
 import ProfileButtons from '../../components/ProfileButtons/ProfileButtons';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useMemo, useRef } from 'react';
+import FloatButtons from '../../components/FloatButtons/FloatButtons';
 
 const HomeComponent = () => {
   const { t } = useTranslation();
@@ -107,7 +107,7 @@ const HomeComponent = () => {
         </ContentArea>
       </footer>
 
-      <ToggleThemeButton />
+      <FloatButtons />
     </ThemeProvider>
   );
 };
