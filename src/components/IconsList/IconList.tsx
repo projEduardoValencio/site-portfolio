@@ -18,7 +18,7 @@ const IconList = ({ iconUrlList }: IProps) => {
       <SliderWrapper>
         <Slide>
           {icons.map((icon, index) => (
-            <img key={index} src={icon} height={'100px'} />
+            <img key={index} src={icon}/>
           ))}
         </Slide>
       </SliderWrapper>

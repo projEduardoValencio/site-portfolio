@@ -9,6 +9,15 @@ const inifiniteScroll = keyframes`
   }
 `;
 
+const inifiniteScrollSmallMobile = keyframes`
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-33.5%);
+  }
+`;
+
 export const SliderWrapper = styled.div`
   padding: 0;
   display: inline-flex;
@@ -45,4 +54,18 @@ export const Slide = styled.ul`
   display: inline-flex;
   animation: 20s ${inifiniteScroll} infinite linear;
   gap: 50px;
+
+  @media (max-width: 450px) {
+    animation: 20s ${inifiniteScrollSmallMobile} infinite linear;
+  }
+
+  img{
+    height: 100px;
+    width: auto;
+
+    @media (max-width: 450px) {
+      height: 70px;
+      width: auto;
+    }
+  }
 `;
