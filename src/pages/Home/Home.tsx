@@ -22,29 +22,39 @@ const HomeComponent = () => {
     <ThemeProvider>
       <HeaderComponent />
       <main className="main-content-padding">
-        <ProfileCard />
+        <ProfileCard ref="section-main" />
 
         <div className="show-area">
-          <ContentArea title={t('content.main_stack')}>
+          <ContentArea ref="section-stack" title={t('content.main_stack')}>
             <IconList iconUrlList={mainStackIconList} />
           </ContentArea>
 
-          <ContentArea title={t('content.previous_experience')}>
+          <ContentArea
+            ref="section-previous-exp"
+            title={t('content.previous_experience')}
+          >
             <IconList iconUrlList={previousExperienceIconList} />
           </ContentArea>
 
-          <ContentArea title={t('content.projects')}>
+          <ContentArea ref="section-projects" title={t('content.projects')}>
             <ProjectCardList projects={projectList} />
           </ContentArea>
 
-          <ContentArea title={t('content.enthusiastic')}>
+          <ContentArea
+            ref="section-enthusiastic"
+            title={t('content.enthusiastic')}
+          >
             <ProjectCardList projects={enthusiasticList} />
           </ContentArea>
         </div>
       </main>
 
       <footer className="footer-padding">
-        <ContentArea isFooter title={t('content.contact')}>
+        <ContentArea
+          ref="section-contact"
+          isFooter
+          title={t('content.contact')}
+        >
           <div
             style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}
           >

@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+interface IAttrProps {
+  ref: string;
+}
+export const Container = styled.div.attrs<IAttrProps>(({ ref }) => ({
+  ref,
+}))`
   display: grid;
   grid-template-columns: 65% 35%;
   width: 100%;

@@ -4,8 +4,13 @@ import ContentAreaHeaderTitle from './ContentAreaHeaderTitle/ContentAreaHeaderTi
 interface IStyleProps {
   isFooter?: boolean;
 }
+interface IAttrProps {
+  ref: string;
+}
 
-const Container = styled.div<IStyleProps>`
+const Container = styled.div.attrs<IAttrProps>(({ ref }) => ({
+  ref,
+}))<IStyleProps>`
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -23,11 +28,12 @@ interface IProps {
   title: string;
   isFooter?: boolean;
   children: React.ReactNode;
+  ref: string;
 }
 
-const ContentArea = ({ title, children, isFooter }: IProps) => {
+const ContentArea = ({ title, children, isFooter, ref }: IProps) => {
   return (
-    <Container isFooter={isFooter}>
+    <Container ref={ref} isFooter={isFooter}>
       <ContentAreaHeaderTitle title={title} isFooter={isFooter} />
       {children}
     </Container>

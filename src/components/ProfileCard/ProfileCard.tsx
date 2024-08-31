@@ -12,7 +12,10 @@ import { useEffect, useState } from 'react';
 import ProfileButtons from '../ProfileButtons/ProfileButtons';
 import { useTranslation } from 'react-i18next';
 
-const ProfileCard = () => {
+interface IProps {
+  ref: string;
+}
+const ProfileCard = ({ ref }: IProps) => {
   const [showSubTitle, setShowSubTitle] = useState<boolean>(false);
   const { t } = useTranslation();
 
@@ -21,7 +24,7 @@ const ProfileCard = () => {
   }, []);
 
   return (
-    <Container>
+    <Container ref={ref}>
       <TitleContainer>
         <MainTitle>
           {t('profile.hello')}
