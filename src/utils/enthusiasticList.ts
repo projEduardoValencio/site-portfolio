@@ -1,27 +1,17 @@
 import { IProject } from '../models/interfaces/IProject';
+import Flutter_Gifs from '../../public/screenshots/gif_client_dart.png';
+import i18next from 'i18next';
 
 export const enthusiasticList: IProject[] = [
   {
-    title: 'Atari Bomber',
-    description: `
-    Project 1 descriptionA tech solutions, avid programmer and fast learner, obsessed with details and quality, 
-    Project 1 descriptionA tech solutions, avid programmer and fast learner, obsessed with details and quality, 
-    Project 1 descriptionA tech solutions, avid programmer and fast learner, obsessed with details and quality, 
-      `,
-    projectImageUrl:
-      'https://via.placeholder.com/150https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGgB7GLq62w4RlgKtkkSnyxrLkHjICzZGUIA&s',
-    tags: ['6502', 'assembly', 'atari', 'game', 'stella'],
+    title: 'Flutter Gif Client',
+    get description() {
+      return i18next.t('enthusiastic.dart_gif_client').toString();
+    },
+    projectImageUrl: Flutter_Gifs,
+    tags: ['flutter', 'dart', 'api_client', 'fun'],
     show: true,
-    sourceProjectUrl: 'https://github.com',
-  },
-  {
-    title: 'Phyllotaxis',
-    description:
-      'A tech solutions, avid programmer and fast learner, obsessed over development process and code quality, I love simple and elegant solutions for every problem.',
-    projectImageUrl:
-      'https://via.placeholder.com/150https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRInSUKsKv2OOYWVEcoI2wJqvQYyxAoSHYPzA&s',
-    tags: ['python', 'python-game', 'math'],
-    show: true,
-    sourceProjectUrl: 'https://github.com',
+    sourceProjectUrl: 'https://github.com/projEduardoValencio/gifs_api',
+    not_cover: true,
   },
 ];

@@ -21,7 +21,16 @@ const ProjectCard = ({ project }: IProps) => {
     <ProjectContainerCard>
       <TitleMobile>{project.title}</TitleMobile>
       <ContentGrid>
-        <img src={project.projectImageUrl} />
+        <img
+          src={project.projectImageUrl}
+          style={
+            project.not_cover
+              ? {
+                  objectFit: 'contain',
+                }
+              : undefined
+          }
+        />
 
         <Title className="padding-horizontal">{project.title}</Title>
 
@@ -37,9 +46,13 @@ const ProjectCard = ({ project }: IProps) => {
 
         <ButtonDiv>
           {project.applicationAppUrl && (
-            <Button>{t('button.go_to_app')}</Button>
+            <Button href={project.applicationAppUrl}>
+              {t('button.go_to_app')}
+            </Button>
           )}
-          <Button fillButton>{t('button.source_code')}</Button>
+          <Button href={project.sourceProjectUrl} fillButton>
+            {t('button.source_code')}
+          </Button>
         </ButtonDiv>
       </ContentGrid>
     </ProjectContainerCard>

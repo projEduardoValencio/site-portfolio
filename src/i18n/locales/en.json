@@ -13,6 +13,9 @@
     },
     "developer": "Web Developer Full-Stack",
     "download_cv": "Download CV",
+    "enthusiastic": {
+      "dart_gif_client": "Flutter Dart application for querying gifs using the GIPHY public API."
+    },
     "footer": {
       "get_in_touch": "Get in touch or shoot me an email directly on"
     },
@@ -26,6 +29,9 @@
       "hello": "Hi, I'm ",
       "introduction_content": "A Full-Stack and DevOps developer with experience in a variety of technologies, like C#, TypeScript, Python, C++, PHP e Java. Specializing in building scalable and secure web applications, I enjoy integrating front-end and back-end with clean architecture while managing CI/CD pipelines and cloud infrastructure. Always seeking new challenges and learning opportunities, I am excited to explore areas such as Information Security, IoT, ML, and Mobile development.",
       "introduction_end": "Let's create something amazing together!"
+    },
+    "projects": {
+      "site_portfolio": "A modern portfolio, designed in Figma and developed in React, combining responsive design with animations. Adaptable to all devices, the site offers an engaging and functional user experience, showcasing the ability to integrate design and development."
     }
   }
 }

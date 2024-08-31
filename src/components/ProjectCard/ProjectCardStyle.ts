@@ -32,7 +32,9 @@ export const ContentGrid = styled.div`
   }
 
   img {
+    object-fit: cover;
     grid-row: span 2;
+    object-position: top;
     height: 300px;
     width: 100%;
     border: 1px solid var(--secondary-color);
@@ -131,7 +133,14 @@ export const ButtonDiv = styled.div`
 interface IButtonProps {
   fillButton?: boolean;
 }
-export const Button = styled.button<IButtonProps>`
+interface IButtonAttrProps {
+  href: string;
+}
+export const Button = styled.a.attrs<IButtonAttrProps>(({ href }) => ({
+  href: href,
+  target: '_blank',
+}))<IButtonProps>`
+  text-decoration: none;
   width: 145px;
   height: 43px;
   border-radius: 5px;
@@ -142,6 +151,13 @@ export const Button = styled.button<IButtonProps>`
     props.fillButton ? 'var(--primary-color)' : 'var(--secondary-color)'};
 
   transition: all 0.1s ease-in-out;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'IBM Plex Mono';
+  font-size: 14px;
+  font-weight: 700;
 
   &:hover {
     cursor: pointer;

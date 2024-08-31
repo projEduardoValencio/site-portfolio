@@ -6,4 +6,5 @@ export interface IProject {
   show: boolean;
   sourceProjectUrl: string;
   applicationAppUrl?: string;
+  not_cover?: boolean;
 }
