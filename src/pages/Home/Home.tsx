@@ -36,8 +36,19 @@ const HomeComponent = () => {
           <ContentArea title="ENTHUSIASTIC">
             <ProjectCardList projects={enthusiasticList} />
           </ContentArea>
+
         </div>
       </main>
+
+      <footer className='footer-padding'>
+        <ContentArea isFooter title="CONTACT">
+          <p>
+          Get in touch or shoot me an email directly on <b>eduardo.valencio.santos@gmail.com</b>
+          </p>
+
+          <span>Design & Developed by Eduardo Valencio</span>
+        </ContentArea>
+      </footer>
 
       <ToggleThemeButton />
     </ThemeProvider>

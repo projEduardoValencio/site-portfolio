@@ -1,6 +1,5 @@
 .main-content-padding {
   padding: 200px 20%;
-  position: relative;
 }
 
 @media (max-width: 1400px) {
@@ -18,6 +17,38 @@
 @media (max-width: 425px) {
   .main-content-padding {
     padding: 90px 10px;
+  }
+}
+
+footer{
+  background-color: var(--secondary-color);
+  text-align: center;
+
+}
+
+footer span {
+  font-size: 12px;
+}
+
+.footer-padding {
+  padding: 30px 20%;
+}
+
+@media (max-width: 1400px) {
+  .footer-padding {
+    padding: 30px 10%;
+  }
+}
+
+@media (max-width: 925px) {
+  .footer-padding {
+    padding: 15px 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .fotter-padding {
+    padding: 15px 10px;
   }
 }
 
