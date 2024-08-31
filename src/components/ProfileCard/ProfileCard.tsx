@@ -22,7 +22,7 @@ const ProfileCard = () => {
     <Container>
       <TitleContainer>
         <MainTitle>
-          Hi, I'm
+          Olá, eu sou
           <TypeAnimation
             className="name-animation"
             sequence={[' Eduardo Valencio']}
@@ -61,11 +61,14 @@ const ProfileCard = () => {
       </ProfileImageContainer>
 
       <Biography>
-        I am a passionate Software Developer 🚀 from Egypt 🇪🇬. with more than 5
-        years experience delivering tech solutions, avid programmer and fast
-        learner, obsessed with details and quality, always trying to improve
-        development process and code quality, I love simple and elegant
-        solutions for every problem.
+        Sou um desenvolvedor Full-Stack e DevOps com experiência em uma
+        variedade de tecnologias, desde C# e TypeScript até Python e Java.
+        Especializado em criar aplicações web escaláveis e seguras, eu gosto de
+        unir front-end e back-end com uma arquitetura limpa, enquanto gerencio
+        pipelines CI/CD e infraestrutura em nuvem. Sempre em busca de novos
+        desafios e aprendizados, estou animado para explorar áreas como
+        Segurança da Informação, IoT, ML e Mobile.
+        <br /> <i>Vamos fazer algo incrível juntos!</i>
       </Biography>
 
       <ProfileButtons />
