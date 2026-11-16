@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eduardo Valencio — Secure by design</title>
+<meta name="description" content="Eduardo Valencio — full-stack engineer (.NET, Java, Angular) moving into Application Security. CompTIA Security+.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Martian+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<body class="is-loading">
+
+<!-- cursor -->
+<div class="cursor" aria-hidden="true"><div class="cursor__dot"></div></div>
+<div class="cursor-wrap-label" aria-hidden="true"><div class="cursor__label">Drag</div></div>
+
+<!-- preloader -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__top mono"><span>[EV] — portfolio 2026</span><span>secure handshake…</span></div>
+  <div class="loader__log" id="llog">
+    <div><span>&gt; establishing TLS connection</span><span class="dots"></span><span class="ok">ok</span></div>
+    <div><span>&gt; verifying integrity</span><span class="dots"></span><span class="ok">ok</span></div>
+    <div><span>&gt; loading .NET · Java · Angular</span><span class="dots"></span><span class="ok">ok</span></div>
+    <div><span>&gt; applying security policy</span><span class="dots"></span><span class="ok">ok</span></div>
+    <div><span class="grant">&gt; access granted_</span></div>
+  </div>
+  <div class="loader__name"><b id="lname">Eduardo Valencio</b>Full-stack → Application Security</div>
+  <div class="loader__count" id="count">000</div>
+  <div class="loader__bar" id="lbar"></div>
+</div>
+
+<!-- nav -->
+<header class="nav">
+  <div class="nav__bar">
+    <a href="#top" class="nav__brand" data-hover aria-label="Eduardo Valencio — início">
+      <span class="nav__mark">EV</span>
+      <span class="nav__name">Eduardo Valencio<small>AppSec · Full-stack</small></span>
+    </a>
+    <nav class="nav__links" aria-label="Sections">
+      <span class="nav__ind" id="navInd"></span>
+      <a href="#trabalho" data-scramble data-hover>Work</a>
+      <a href="#experiencia" data-scramble data-hover>Experience</a>
+      <a href="#sobre" data-scramble data-hover>About</a>
+      <a href="#stack" data-scramble data-hover>Stack</a>
+    </nav>
+    <div class="nav__end">
+      <div class="lang mono" role="group" aria-label="Language / Idioma"><button data-l="en" class="on" aria-pressed="true">EN</button><button data-l="pt" aria-pressed="false">PT</button></div>
+      <a href="#contato" class="nav__cta magnetic" data-hover>Let's talk <span>↗</span></a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav class="menu__links" aria-label="Menu">
+    <a href="#trabalho">Work <small>02</small></a>
+    <a href="#experiencia">Experience <small>03</small></a>
+    <a href="#sobre">About <small>04</small></a>
+    <a href="#stack">Stack <small>06</small></a>
+    <a href="#contato">Contact <small>07</small></a>
+  </nav>
+  <div class="menu__foot mono">
+    <a href="https://www.linkedin.com/in/eduardo-valencio-santos/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a href="https://github.com/projEduardoValencio" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="https://api.whatsapp.com/send?phone=5514998170552" target="_blank" rel="noopener">WhatsApp ↗</a>
+  </div>
+</div>
+
+<div class="dock" id="dock">
+  <a class="d1" href="#contato">Let's talk <span>↗</span></a>
+  <a class="d2" href="https://www.linkedin.com/in/eduardo-valencio-santos/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+</div>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero__meta mono">
+    <span class="status"><i></i>Available for Application Security roles</span>
+    <span id="clock">São Paulo — 00:00:00</span>
+  </div>
+  <div class="hero__kicker mono">
+    <span>Eduardo Valencio</span>
+    <span>Full-stack engineer · .NET / Java / Angular</span>
+    <span class="lime">CompTIA Security+</span>
+  </div>
+  <div class="hero__main">
+    <div class="hero__head">
+    <h1 class="hero__title">
+      <span class="line"><span>Secure by</span></span>
+      <span class="line"><span class="tech">Design<i class="cur"></i></span></span>
+    </h1>
+    <p class="hero__sub"><span>from code to vulnerability — and back.</span></p>
+    </div>
+    <div class="hero__win rv">
+      <div class="win" id="win">
+        <div class="win__bar" aria-hidden="true">
+          <span class="win__dots"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+          <span class="win__title">eduardo — zsh — 80×24</span>
+        </div>
+        <div class="win__body">
+            <div class="term" aria-label="whoami: application security engineer">
+              <div><span class="lime">eduardo@valencio</span>:~$ <b>whoami</b></div>
+              <div id="who"><s>fullstack_engineer</s></div>
+              <div><b id="typed"></b><span class="caret"></span></div>
+            </div>
+        </div>
+        <div class="win__glare"></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero__foot">
+    <p class="hero__lead rv">Four years shipping production systems — from real-time home brokers to ERPs moving off COBOL. Now I bring a builder's eye to <strong>application security</strong>.</p>
+    <div class="scroll-hint mono rv"><i></i>Scroll</div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" id="marq"></div>
+</div>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <span class="mono" style="color:var(--muted)">(01) — The shift</span>
+  <p id="manifesto">I spent the last few years on the builder's side: APIs that move money, real-time dashboards, legacy systems becoming web apps. That's where I learned where software tends to give way — and that's exactly where I want to work now.</p>
+</section>
+
+<!-- STATS -->
+<section class="stats" aria-label="Números">
+  <div class="stat rv"><div class="stat__n"><span data-count="70">0</span>%<sup>↓</sup></div><p>lower infrastructure cost for a cloud application, redesigned with AWS-recommended services — without giving up resilience or security.</p></div>
+  <div class="stat rv"><div class="stat__n"><span data-count="4">0</span>+<sup>years</sup></div><p>writing software that runs in production across fintech, ERP and consulting.</p></div>
+  <div class="stat rv"><div class="stat__n"><span data-count="25">0</span>%<sup>↑</sup></div><p>more actionable insights from a BI layer that unified ERP modules into reports and dashboards.</p></div>
+  <div class="stat rv"><div class="stat__n">Sec<span class="lime">+</span></div><p>CompTIA Security+ — the formal foundation for my move into Application Security.</p></div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="trabalho">
+  <div class="shead">
+    <h2 class="rv">Selected<br><span class="tech">work</span></h2>
+    <div class="meta mono rv"><span>(02) — Selected projects</span><span>Drag or use the arrows</span></div>
+  </div>
+  <div class="carousel" id="carousel" data-cursor="Drag">
+    <div class="track" id="track">
+      <article class="card">
+        <div class="card__media"><img src="assets/cover-cloud.webp" alt="Chrome servers deflating, symbolizing cost reduction"><span class="card__tag mono">Fintech · AWS</span></div>
+        <div class="card__body">
+          <div class="card__row mono"><span>NT Capital</span><span>2022–23</span></div>
+          <h3>Cloud architecture at −70% cost</h3>
+          <p>I redesigned an application's architecture with AWS-recommended services, cutting infrastructure costs by over 70% while keeping it resilient and secure.</p>
+          <div class="card__sec"><b>AppSec lens</b>Fewer exposed parts, same protection: a leaner architecture is also a smaller attack surface.</div>
+          <div class="chips"><span>AWS</span><span>C# .NET</span><span>Architecture</span><span>Cost</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/cover-broker.webp" alt="Green jelly candlestick chart with data particles"><span class="card__tag mono">Real-time</span></div>
+        <div class="card__body">
+          <div class="card__row mono"><span>NT Capital</span><span>2022–23</span></div>
+          <h3>Real-time Home Broker</h3>
+          <p>I refactored a Home Broker dashboard in AngularJS and C# .NET, fixing bottlenecks in transaction updates: wrongly triggered hooks and unnecessary SignalR connections.</p>
+          <div class="card__sec"><b>AppSec lens</b>Persistent connections and financial data demand fine-grained control over who subscribes to what.</div>
+          <div class="chips"><span>AngularJS</span><span>SignalR</span><span>C# .NET</span><span>Performance</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/cover-legacy.webp" alt="Punch card and vintage terminal turning into a browser window"><span class="card__tag mono">Modernization</span></div>
+        <div class="card__body">
+          <div class="card__row mono"><span>Sistemas de Gestão</span><span>2023–24</span></div>
+          <h3>From COBOL to the web</h3>
+          <p>I migrated legacy COBOL programs to web applications (Angular, React and Vue on the front end; .NET C# and Spring on the back end), deployed on Linux and automated with Bash. I also built a BI layer that unified the ERP modules.</p>
+          <div class="card__sec"><b>AppSec lens</b>Every modernized legacy system gains a new attack surface — mapping it is part of the migration.</div>
+          <div class="chips"><span>.NET</span><span>Spring</span><span>Angular</span><span>Linux</span><span>BI</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/cover-appsec.webp" alt="Chrome magnifier finding a bug inside code blocks"><span class="card__tag mono wip">In progress</span></div>
+        <div class="card__body">
+          <div class="card__row mono"><span>AppSec Lab</span><span>2026 →</span></div>
+          <h3>Next chapter: AppSec</h3>
+          <p>Hands-on, documented study of the OWASP Top 10, threat modeling and CI/CD pipeline security, applied to the kind of systems I already build: .NET/Java APIs and Angular/React front ends.</p>
+          <div class="card__sec"><b>Goal</b>Bridge development and security: fix at the source, not just report.</div>
+          <div class="chips"><span>OWASP</span><span>Threat Modeling</span><span>SAST/DAST</span><span>CI/CD</span></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="card__media"><img src="assets/cover-side.webp" alt="Smartphone and glass window with abstract UI"><span class="card__tag mono">Open source</span></div>
+        <div class="card__body">
+          <div class="card__row mono"><span>Side projects</span><span>GitHub</span></div>
+          <h3>React Portfolio &amp; Flutter GIF Client</h3>
+          <p>A portfolio designed in Figma and built with React + TypeScript, i18n and animations, plus a Flutter/Dart app consuming the public GIPHY API.</p>
+          <div class="chips"><span>React</span><span>TypeScript</span><span>Flutter</span><span>Dart</span></div>
+          <div style="display:flex;gap:18px"><a class="more" href="https://github.com/projEduardoValencio/site-portfolio" target="_blank" rel="noopener" data-hover>Portfolio ↗</a><a class="more" href="https://github.com/projEduardoValencio/gifs_api" target="_blank" rel="noopener" data-hover>GIF Client ↗</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="cbar mono">
+    <span class="cbar__count" id="ccount">01 / 05</span>
+    <div class="cbar__prog"><i id="cprog"></i></div>
+    <button id="prev" aria-label="Previous" data-hover>←</button>
+    <button id="next" aria-label="Next" data-hover>→</button>
+  </div>
+</section>
+
+<!-- LIGHT ZONE: experience + about + cert -->
+<div class="light-zone" id="lightzone">
+<section id="experiencia">
+  <div class="shead">
+    <h2 class="rv">Experience</h2>
+    <div class="meta mono rv" style="color:#6a6a6e"><span>(03) — Where I built</span><span>Hover for the security lens</span></div>
+  </div>
+  <div class="xp">
+    <div class="xp__row rv">
+      <span class="xp__n">01</span>
+      <span class="xp__co">MJV Technology &amp; Innovation</span>
+      <span class="xp__role">Fullstack Software Engineer · .NET C# / Angular</span>
+      <span class="xp__date">09/2024 — present</span>
+      <div class="xp__more">
+        <p>New features and system optimization with C# .NET, Java Spring and Angular. Automated tests to keep releases stable, in agile teams spanning engineering, design and product.</p>
+        <div class="lens"><b>Security lens</b>Automated tests are the first line of defense against regressions — security ones included.</div>
+      </div>
+    </div>
+    <div class="xp__row rv">
+      <span class="xp__n">02</span>
+      <span class="xp__co">Sistemas de Gestão</span>
+      <span class="xp__role">Fullstack Software Engineer · ERP</span>
+      <span class="xp__date">07/2023 — 09/2024</span>
+      <div class="xp__more">
+        <p>ERP development and migration of COBOL programs to the web (Angular, React, Vue / .NET and Spring). Linux deployments, Bash automation and a BI layer that unified ERP modules, with +25% actionable insights.</p>
+        <div class="lens"><b>Security lens</b>Linux, scripts and business data: I learned hands-on what needs protecting in a management system.</div>
+      </div>
+    </div>
+    <div class="xp__row rv">
+      <span class="xp__n">03</span>
+      <span class="xp__co">NT Capital</span>
+      <span class="xp__role">Fullstack Software Engineer Jr · .NET C# / React</span>
+      <span class="xp__date">09/2022 — 06/2023</span>
+      <div class="xp__more">
+        <p>Web applications for investment-market influencers, a Home Broker refactor (AngularJS + C# .NET) and an AWS architecture redesign at −70% cost.</p>
+        <div class="lens"><b>Security lens</b>Fintech puts money, real time and cloud in the same equation — a great place to start thinking about risk.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="portrait rv">
+    <img src="assets/portrait.webp" alt="Portrait of Eduardo Valencio" id="pimg">
+    <span class="portrait__cap mono">Eduardo Valencio</span>
+  </div>
+  <div>
+    <span class="mono" style="color:#6a6a6e">(04) — About</span>
+    <h2 class="rv" style="margin-top:18px">A developer shaped in the field. <span class="tech">Security</span> by choice.</h2>
+    <div class="about__txt">
+      <p class="rv">I started in mechanical engineering at UNESP, moved into software and I'm now studying Computer Science. Along the way I wrote C#, Java, TypeScript, Python and even lived alongside COBOL — always close to production, CI/CD and the cloud.</p>
+      <p class="rv">Curiosity about security was always there. With <strong>CompTIA Security+</strong> it became a direction: I want to work as an <strong>Application Security Engineer</strong>, helping teams build secure software from the very first commit — because I know what it's like on the other side of the code review.</p>
+    </div>
+    <div class="facts mono rv">
+      <div><span>Education</span>Computer Science — UNISAGRADO</div>
+      <div><span>Before</span>Mechanical Engineering — UNESP</div>
+      <div><span>Languages</span>Portuguese (native) · English B2</div>
+      <div><span>Based in</span>São Paulo, Brazil · remote</div>
+    </div>
+  </div>
+</section>
+
+<section class="cert" aria-label="Certificações">
+  <div class="badge rv" id="badge" data-cursor="Sec+">
+    <div class="badge__glare"></div>
+    <div class="badge__top mono"><span>(05) — Certification</span><span>CompTIA</span></div>
+    <div>
+      <h3>Security<span class="tech">+</span></h3>
+      <p style="margin-top:18px">Threats, vulnerabilities, secure architecture, operations and risk management — the foundation that connects my development experience to AppSec work.</p>
+    </div>
+    <img class="badge__fp" src="assets/fingerprint.webp" alt="">
+  </div>
+  <div class="cert__side">
+    <div class="mini rv"><span class="mono">Also</span><h4>AWS Cloud</h4><p>AWS cloud certification, put into practice cutting infrastructure costs at NT Capital.</p></div>
+    <div class="mini rv"><span class="mono">Studying now</span><h4>OWASP · Threat Modeling · DevSecOps</h4><p>Security-focused code review, SAST/DAST and CI/CD pipeline security.</p></div>
+  </div>
+</section>
+</div>
+
+<!-- STACK -->
+<section id="stack">
+  <div class="shead">
+    <h2 class="rv">Toolkit</h2>
+    <div class="meta mono rv"><span>(06) — Stack</span><span>Two sides of the same code</span></div>
+  </div>
+  <div class="stack">
+    <div class="stack__col rv">
+      <span class="mono" style="color:var(--muted)">I build with</span>
+      <h3>Development</h3>
+      <div class="tags"><span>C# .NET</span><span>Java Spring</span><span>TypeScript</span><span>Angular</span><span>React</span><span>Vue</span><span>Python</span><span>PHP</span><span>C++</span><span>Flutter</span><span>PostgreSQL</span><span>Oracle</span><span>MongoDB</span><span>DynamoDB</span><span>AWS</span><span>Docker</span><span>Jenkins</span><span>Linux</span><span>Bash</span><span>Figma</span></div>
+    </div>
+    <div class="stack__col sec rv">
+      <span class="mono lime">Current focus</span>
+      <h3>Application security</h3>
+      <div class="tags"><span>OWASP Top 10</span><span>Secure Code Review</span><span>Threat Modeling</span><span>SAST</span><span>DAST</span><span>Secure SDLC</span><span>CI/CD security</span><span>Cloud Security (AWS)</span><span>Authentication &amp; Authorization</span><span>Risk management</span></div>
+      <p class="stack__note">Areas I'm going deeper into right now, backed by Security+ and by experience building the very systems they protect.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contato">
+  <p class="contact__k mono">(07) — Contact · Open to Application Security roles</p>
+  <a href="mailto:eduardo.valencio.santos@gmail.com?subject=Proposta" class="contact__big" data-cursor="E-mail">
+    <span class="line"><span>Let's</span></span>
+    <span class="line"><span><span class="tech">talk</span> ↗</span></span>
+  </a>
+  <div class="contact__row">
+    <button class="btn btn--lime magnetic" id="copy" data-hover>eduardo.valencio.santos@gmail.com <span>⧉</span></button>
+    <a class="btn btn--ghost magnetic" href="https://www.linkedin.com/in/eduardo-valencio-santos/" target="_blank" rel="noopener" data-hover>LinkedIn ↗</a>
+    <nav class="socials mono" aria-label="Redes">
+      <a href="https://github.com/projEduardoValencio" target="_blank" rel="noopener" data-hover>GitHub</a>
+      <a href="https://api.whatsapp.com/send?phone=5514998170552&text=Ol%C3%A1%20Eduardo%2C%20vim%20pelo%20seu%20site" target="_blank" rel="noopener" data-hover>WhatsApp</a>
+    </nav>
+  </div>
+  <footer class="foot mono">
+    <span>© 2026 Eduardo Valencio</span>
+    <span>Design &amp; code by Eduardo · images generated with Higgsfield</span>
+    <a href="#top" data-hover>Back to top ↑</a>
+  </footer>
+</section>
+</main>
+
+<div class="toast mono" id="toast">Email copied</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
