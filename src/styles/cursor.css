@@ -1,0 +1,10 @@
+/* Custom cursor. */
+.cursor{position:fixed;left:0;top:0;z-index:999;pointer-events:none;mix-blend-mode:difference}
+.cursor__dot{width:8px;height:8px;border-radius:50%;background:#fff;transform:translate(-50%,-50%);transition:width .35s var(--ease),height .35s var(--ease)}
+.cursor__label{position:absolute;left:0;top:0;transform:translate(-50%,-50%) scale(0);width:92px;height:92px;border-radius:50%;background:var(--accent);color:var(--ink);display:grid;place-items:center;font-family:var(--mono);font-size:11px;text-transform:uppercase;transition:transform .45s var(--ease);mix-blend-mode:normal}
+.cursor.is-hover .cursor__dot{width:44px;height:44px}
+.cursor.is-label .cursor__dot{width:0;height:0}
+.cursor.is-label .cursor__label{transform:translate(-50%,-50%) scale(1)}
+.cursor-wrap-label{position:fixed;left:0;top:0;z-index:998;pointer-events:none}
+@media (hover:none){.cursor,.cursor-wrap-label{display:none}}
+@media (hover:hover){body,a,button{cursor:none}}

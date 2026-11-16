@@ -1,0 +1,9 @@
+/* Section heading. */
+.shead{display:flex;justify-content:space-between;align-items:end;gap:24px;padding:clamp(90px,12vw,170px) var(--pad) 36px}
+.shead h2{font-size:clamp(44px,7vw,120px);font-weight:600;letter-spacing:-.05em;line-height:.88}
+.shead .meta{text-align:right;color:var(--muted);display:grid;gap:6px}
+
+@media (max-width:820px){
+  .shead{flex-direction:column;align-items:flex-start;padding:84px var(--pad) 26px}
+  .shead .meta{text-align:left}
+}

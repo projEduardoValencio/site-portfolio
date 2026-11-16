@@ -1,0 +1,11 @@
+/* Design tokens: change these to re-theme the site. */
+:root{
+  --ink:#0A0A0B; --ink-2:#141416; --line:rgba(236,236,236,.12);
+  --paper:#ECECEC; --paper-2:#E2E2E0; --muted:#8A8A8E;
+  --accent:#C9F24D; --accent-d:#9DC21F;
+  --sans:"Familjen Grotesk",system-ui,sans-serif;
+  --tech:"Martian Mono",ui-monospace,monospace;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --pad:clamp(20px,3.2vw,48px);
+  --ease:cubic-bezier(.7,0,.2,1);
+}
