@@ -1,18 +1,20 @@
-/** Experience rows reveal their detail on hover; click / Enter / Space toggles it for touch and keyboard. */
-import { $$ } from '../lib/env.js';
+/** Experience accordion: one row open at a time; the first row ships open in the markup. */
+import { $, $$ } from '../lib/env.js';
 
 export function initExperience() {
-  for (const row of $$('.xp__row')) {
-    row.tabIndex = 0;
-    row.setAttribute('role', 'button');
-    row.setAttribute('aria-expanded', 'false');
+  const rows = $$('.xp__row');
 
-    const toggle = () => row.setAttribute('aria-expanded', row.classList.toggle('open'));
-    row.addEventListener('click', toggle);
-    row.addEventListener('keydown', (event) => {
-      if (event.key !== 'Enter' && event.key !== ' ') return;
-      event.preventDefault();
-      toggle();
+  const setOpen = (row, open) => {
+    row.classList.toggle('open', open);
+    $('.xp__toggle', row).setAttribute('aria-expanded', open);
+    $('.xp__more', row).setAttribute('aria-hidden', !open);
+  };
+
+  for (const row of rows) {
+    $('.xp__toggle', row).addEventListener('click', () => {
+      const open = !row.classList.contains('open');
+      for (const other of rows) setOpen(other, false);
+      setOpen(row, open);
     });
   }
 }

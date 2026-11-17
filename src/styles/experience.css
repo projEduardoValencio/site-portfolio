@@ -1,32 +1,48 @@
-/* Experience (light zone). */
+/* Experience (light zone): an accordion. Click / Enter / Space toggles a row (one open at a time);
+   hovering a row only previews the highlight. */
 .light-zone{color:inherit}
 .xp{padding:0 var(--pad)}
-.xp__row{display:grid;grid-template-columns:90px 1.4fr 1.6fr 160px;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid var(--zone-line);position:relative;transition:padding .5s var(--ease)}
+.xp__row{display:grid;grid-template-columns:90px 1.4fr 1.6fr 160px;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid var(--zone-line);position:relative}
 .xp__row:last-child{border-bottom:1px solid var(--zone-line)}
 .xp__n{font-family:var(--mono);font-size:13px;color:var(--zone-muted)}
 .xp__co{font-size:clamp(26px,3.2vw,50px);font-weight:600;letter-spacing:-.04em;line-height:.95}
+.xp__toggle{display:block;text-align:left;letter-spacing:inherit}
+.xp__toggle:after{content:"";position:absolute;inset:0} /* the whole row is the click target */
 .xp__role{font-size:17px}
-.xp__date{text-align:right;font-family:var(--mono);font-size:12px;color:var(--zone-muted);text-transform:uppercase}
-.xp__more{grid-column:2/5;display:grid;grid-template-columns:1.4fr 1.6fr;gap:24px;max-height:0;overflow:hidden;opacity:0;transition:max-height .6s var(--ease),opacity .4s}
+.xp__date{text-align:right;font-family:var(--mono);font-size:12px;color:var(--zone-muted);text-transform:uppercase;padding-right:28px}
+.xp__row:after{content:"+";position:absolute;right:0;top:30px;font-family:var(--mono);font-size:18px;line-height:1;transition:transform .4s var(--ease)}
+.xp__row.open:after{transform:rotate(45deg)}
+
+/* Panel height animates with grid rows (no max-height, so long copy is never clipped). */
+.xp__more{position:relative;z-index:1;grid-column:2/5;display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.xp__inner{min-height:0;overflow:hidden;display:grid;grid-template-columns:1.4fr 1.6fr;gap:24px;opacity:0;transition:opacity .4s}
+.xp__row.open .xp__more{grid-template-rows:1fr}
+.xp__row.open .xp__inner{opacity:1}
 .xp__more p{font-size:15px;color:var(--zone-body)}
 .xp__more .lens{font-size:15px}
 .xp__more .lens b{display:block;font-family:var(--mono);font-size:11px;text-transform:uppercase;font-weight:500;margin-bottom:6px;color:var(--zone-accent)}
-.xp__row:hover .xp__more,.xp__row.open .xp__more{max-height:260px;opacity:1}
-.xp__row:before{content:"";position:absolute;inset:0 calc(var(--pad)*-1);background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease);z-index:-1}
-.xp__row:hover:before{transform:scaleY(1)}
-.xp__row:hover .xp__more .lens b{color:var(--ink)}
-@media (max-width:820px){.xp__row{grid-template-columns:44px 1fr}.xp__role,.xp__date{grid-column:2}.xp__date{text-align:left}.xp__more{grid-column:1/-1;grid-template-columns:1fr}}
 
-@media (hover:none){.xp__row:hover:before{transform:scaleY(0)}.xp__row.open:before{transform:scaleY(1)}.xp__row.open .xp__more .lens b{color:var(--ink)}}
-.xp__row:after{content:"+";position:absolute;right:0;top:30px;font-family:var(--mono);font-size:18px;display:none;transition:transform .4s var(--ease)}
-.xp__row.open:after{transform:rotate(45deg)}
+/* Highlight band: on for the open row, previewed on hover for mouse users. Text switches to ink on it. */
+.xp__row:before{content:"";position:absolute;inset:0 calc(var(--pad)*-1);background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease);z-index:-1}
+.xp__row.open:before{transform:scaleY(1)}
+.xp__row.open{color:var(--ink)}
+.xp__row.open :is(.xp__n,.xp__date,.xp__more p,.lens b){color:inherit}
+@media (hover:hover){
+  .xp__row:hover:before{transform:scaleY(1)}
+  .xp__row:hover{color:var(--ink)}
+  .xp__row:hover :is(.xp__n,.xp__date,.xp__more p,.lens b){color:inherit}
+}
+.xp__row:has(.xp__toggle:focus-visible){outline:2px solid var(--ink);outline-offset:-2px}
 
 @media (max-width:820px){
   .xp__row{padding:22px 0;grid-template-columns:36px 1fr;gap:6px 12px}
-  .xp__row:after{display:block;top:22px}
+  .xp__row:after{top:22px}
   .xp__co{font-size:28px;padding-right:28px}
+  .xp__role,.xp__date{grid-column:2}
   .xp__role{font-size:15px}
-  .xp__more{padding-left:48px;gap:12px}
+  .xp__date{text-align:left;padding-right:0}
+  .xp__more{grid-column:1/-1;padding-left:48px}
+  .xp__inner{grid-template-columns:1fr;gap:12px}
   .xp__row.open .xp__more{margin-top:10px}
 }
 
