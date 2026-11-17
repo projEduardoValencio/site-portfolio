@@ -1,6 +1,8 @@
 // Portuguese strings, keyed by the data-i18n / data-i18n-attr keys in index.html.
 // English is the markup default, so only the overrides live here.
 export default {
+  "copy-email": "Copiar e-mail <span>⧉</span>",
+  "hero-sr-name": "Eduardo Valencio — desenvolvedor full-stack. ",
   "manifesto": "Passei os últimos anos do lado de quem constrói: APIs que movimentam dinheiro, dashboards em tempo real, sistemas legados virando web. Foi ali que aprendi onde o software costuma ceder — e é exatamente ali que quero trabalhar agora.",
   "ev-portfolio-2026": "[EV] — portfólio 2026",
   "secure-handshake": "handshake seguro…",
@@ -100,8 +102,8 @@ export default {
   "attr-drag": "Arraste",
   "attr-sections": "Seções",
   "attr-menu": "Menu",
-  "attr-eduardo-valencio-home": "Eduardo Valencio — início",
   "attr-numbers": "Números",
   "attr-certifications": "Certificações",
-  "attr-social-links": "Redes"
+  "attr-social-links": "Redes",
+  "attr-quick-actions": "Ações rápidas"
 };

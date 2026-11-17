@@ -15,7 +15,7 @@ export function initSmoothScroll() {
     lenis.stop(); // locked until the preloader finishes
   }
 
-  for (const link of $$('a[href^="#"]')) {
+  for (const link of $$('a[href^="#"]:not([data-contact])')) {
     link.addEventListener('click', (event) => {
       const target = $(link.getAttribute('href'));
       if (!target) return;

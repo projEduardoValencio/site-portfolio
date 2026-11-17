@@ -1,15 +1,30 @@
-/** Preloader sequence. Resolves when the page behind it can start animating in. */
+/** Preloader sequence (once per browser session). Resolves when the page behind it can start animating in. */
 import { gsap } from '../lib/gsap.js';
 import { $, $$, reduceMotion } from '../lib/env.js';
 import { scramble } from '../lib/scramble.js';
 
+const SEEN_KEY = 'ev-intro-seen';
+const hasPlayed = () => {
+  try {
+    return sessionStorage.getItem(SEEN_KEY) === '1';
+  } catch {
+    return false;
+  }
+};
+const markPlayed = () => {
+  try {
+    sessionStorage.setItem(SEEN_KEY, '1');
+  } catch {}
+};
+
 export function playIntro() {
   const loader = $('#loader');
-  if (reduceMotion) {
+  if (reduceMotion || hasPlayed()) {
     loader.remove();
     return Promise.resolve();
   }
 
+  markPlayed();
   return new Promise((resolve) => {
     const count = $('#count');
     const bar = $('#lbar');

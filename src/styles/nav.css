@@ -49,15 +49,15 @@ body.menu-open .menu__links a:nth-child(2){transition-delay:.05s}body.menu-open 
 .dock .d2{flex:0 0 52px;background:rgba(20,20,22,.8);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--line);color:var(--paper)}
 .lang{display:flex;padding:3px;border-radius:99px;background:rgba(236,236,236,.08);gap:2px}
 body.is-light .lang{background:rgba(10,10,11,.06)}
-.lang button{height:38px;min-width:40px;padding:0 10px;border-radius:99px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;opacity:.6;transition:background-color .35s,color .35s,opacity .35s}
-.lang button:hover{opacity:1}
-.lang button.on{background:var(--paper);color:var(--ink);opacity:1}
-body.is-light .lang button.on{background:var(--ink);color:var(--paper)}
-body.menu-open .lang button.on{background:var(--paper);color:var(--ink)}
+.lang a{display:grid;place-items:center;height:38px;min-width:40px;padding:0 10px;border-radius:99px;font-family:var(--mono);font-size:11px;letter-spacing:.04em;opacity:.6;transition:background-color .35s,color .35s,opacity .35s}
+.lang a:hover{opacity:1}
+.lang a.on{background:var(--paper);color:var(--ink);opacity:1}
+body.is-light .lang a.on{background:var(--ink);color:var(--paper)}
+body.menu-open .lang a.on{background:var(--paper);color:var(--ink)}
 
 @media (max-width:380px){.nav__name{font-size:13px}.nav__name small{display:none!important}}
 
 @media (max-width:820px){
-  .lang button{height:34px;min-width:34px;padding:0 8px}
+  .lang a{height:34px;min-width:34px;padding:0 8px}
   .nav__end{gap:6px}
 }

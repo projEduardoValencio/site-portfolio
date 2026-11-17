@@ -2,7 +2,7 @@
 import { $, $$ } from '../lib/env.js';
 import { scramble } from '../lib/scramble.js';
 import { lockScroll, unlockScroll } from './smooth-scroll.js';
-import { LANG_EVENT, t } from './i18n.js';
+import { t } from './i18n.js';
 
 export function initNav() {
   const nav = $('.nav');
@@ -60,14 +60,10 @@ export function initNav() {
   };
 
   burger.addEventListener('click', () => setMenu(!isMenuOpen()));
-  for (const link of $$('a[href^="#"]', menu)) link.addEventListener('click', () => setMenu(false));
+  for (const link of $$('a[href^="#"]:not([data-contact])', menu)) link.addEventListener('click', () => setMenu(false));
   addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && isMenuOpen()) setMenu(false);
   });
 
-  document.addEventListener(LANG_EVENT, () => {
-    syncBurgerLabel();
-    requestAnimationFrame(() => moveIndicator(active)); // link widths change with the language
-  });
   syncBurgerLabel();
 }

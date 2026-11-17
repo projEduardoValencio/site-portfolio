@@ -26,10 +26,30 @@ src/
 ## Conventions
 
 - **Theming:** change `src/styles/tokens.css` (colors, fonts) and the Google Fonts `<link>` in `index.html`.
-- **Translations:** mark an element with `data-i18n="key"` (replaces its inner HTML) or
-  `data-i18n-attr="attribute:key"`, then add `key` to `src/i18n/pt.js`. The markup is the English source of truth.
-  Strings created by JavaScript go in `src/i18n/ui.js`. The first visit follows the browser language; the EN/PT
-  switch is remembered in `localStorage`. Features that depend on text layout listen for the `langchange` event.
+- **Translations:** English is the markup; mark an element with `data-i18n="key"` (replaces its inner HTML) or
+  `data-i18n-attr="attribute:key"` and add `key` to `src/i18n/pt.js`. At build time `vite/seo-pages.js` generates a
+  fully translated page at `/pt/` (the build fails if keys are out of sync or a `data-i18n` element contains another).
+  The EN/PT switch is a plain link between `/` and `/pt/`; `features/i18n.js` only remembers the choice and sends
+  first-time visitors with a Portuguese browser to `/pt/`. Text produced by JavaScript lives in `src/i18n/ui.js`.
 - **Clock:** `features/clock.js` shows the visitor's local time and city from the browser's `Intl` time zone.
   No network request is made, so it works offline, is correct behind a VPN and sends no data to a third party.
 - **Motion:** everything animated respects `prefers-reduced-motion`; custom cursor and tilt are fine-pointer only.
+
+## SEO
+
+Handled at build time by `vite/seo-pages.js` plus the `<head>` of `index.html`:
+
+- title, description, canonical, `hreflang` (en, pt-BR, x-default), Open Graph / Twitter cards, JSON-LD (`ProfilePage`, `WebSite`, `Person`);
+- `sitemap.xml` and `robots.txt` are generated; `public/` holds `og-image.png`, icons, `site.webmanifest` and `404.html`;
+- the site URL is `SITE_URL` (default `https://www.eduardovalencio.com.br/` in `vite.config.js`); change it if the domain changes, e.g. `SITE_URL=https://example.com/ npm run build`;
+- `<title>`/description in `index.html` must match `META.en` in `src/i18n/ui.js` (checked by the build).
+
+After deploying: add the site to [Google Search Console](https://search.google.com/search-console) and Bing Webmaster Tools,
+submit `sitemap.xml`, request indexing for `/` and `/pt/`, and run the Rich Results Test on both URLs.
+
+## Contact details
+
+The email address and WhatsApp number are not in the HTML. `src/data/contact.js` keeps them (base64) and
+`features/contact.js` sets the real `mailto:`/`wa.me` links on the first hover/focus/touch of a contact link.
+This only stops scrapers that read markup; to stop publishing the real address, put a forwarding alias on the
+domain (e.g. `contato@eduardovalencio.com.br`, free with Cloudflare Email Routing or ImprovMX) and replace `EMAIL`.

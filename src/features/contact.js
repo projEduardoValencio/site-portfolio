@@ -1,5 +1,6 @@
-/** "Copy email" button with a toast confirmation. */
-import { $ } from '../lib/env.js';
+/** Contact links (email, WhatsApp) and the "copy email" button with a toast confirmation. */
+import { $, $$ } from '../lib/env.js';
+import { email, mailtoUrl, whatsappUrl } from '../data/contact.js';
 import { t } from './i18n.js';
 
 async function copyText(text) {
@@ -23,14 +24,30 @@ async function copyText(text) {
   }
 }
 
+/** Contact links ship with a harmless placeholder href; the real mailto/WhatsApp URL is set on first interaction. */
+const RESOLVERS = {
+  email: () => mailtoUrl('Proposta'),
+  whatsapp: (link) => whatsappUrl(link.dataset.text),
+};
+
+function armContactLinks() {
+  for (const link of $$('a[data-contact]')) link.href = RESOLVERS[link.dataset.contact](link);
+}
+
 export function initContact() {
+  for (const type of ['pointerover', 'pointerdown', 'focusin', 'click']) {
+    document.addEventListener(type, (event) => {
+      if (event.target.closest('[data-contact]')) armContactLinks();
+    }, { capture: true, passive: true });
+  }
+
   const button = $('#copy');
   const toast = $('#toast');
   let timer;
 
   button.addEventListener('click', async () => {
-    const email = button.dataset.copy;
-    toast.textContent = (await copyText(email)) ? t('emailCopied') : email;
+    const address = email();
+    toast.textContent = (await copyText(address)) ? t('emailCopied') : address;
     toast.classList.add('show');
     clearTimeout(timer);
     timer = setTimeout(() => toast.classList.remove('show'), 2200);

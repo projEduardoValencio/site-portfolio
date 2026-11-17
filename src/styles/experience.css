@@ -1,16 +1,16 @@
 /* Experience (light zone). */
 .light-zone{color:inherit}
 .xp{padding:0 var(--pad)}
-.xp__row{display:grid;grid-template-columns:90px 1.4fr 1.6fr 160px;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid rgba(10,10,11,.16);position:relative;transition:padding .5s var(--ease)}
-.xp__row:last-child{border-bottom:1px solid rgba(10,10,11,.16)}
-.xp__n{font-family:var(--mono);font-size:13px;color:#77777b}
+.xp__row{display:grid;grid-template-columns:90px 1.4fr 1.6fr 160px;gap:24px;align-items:baseline;padding:30px 0;border-top:1px solid var(--zone-line);position:relative;transition:padding .5s var(--ease)}
+.xp__row:last-child{border-bottom:1px solid var(--zone-line)}
+.xp__n{font-family:var(--mono);font-size:13px;color:var(--zone-muted)}
 .xp__co{font-size:clamp(26px,3.2vw,50px);font-weight:600;letter-spacing:-.04em;line-height:.95}
 .xp__role{font-size:17px}
-.xp__date{text-align:right;font-family:var(--mono);font-size:12px;color:#55555a;text-transform:uppercase}
+.xp__date{text-align:right;font-family:var(--mono);font-size:12px;color:var(--zone-muted);text-transform:uppercase}
 .xp__more{grid-column:2/5;display:grid;grid-template-columns:1.4fr 1.6fr;gap:24px;max-height:0;overflow:hidden;opacity:0;transition:max-height .6s var(--ease),opacity .4s}
-.xp__more p{font-size:15px;color:#38383c}
+.xp__more p{font-size:15px;color:var(--zone-body)}
 .xp__more .lens{font-size:15px}
-.xp__more .lens b{display:block;font-family:var(--mono);font-size:11px;text-transform:uppercase;font-weight:500;margin-bottom:6px;color:#5c7a00}
+.xp__more .lens b{display:block;font-family:var(--mono);font-size:11px;text-transform:uppercase;font-weight:500;margin-bottom:6px;color:var(--zone-accent)}
 .xp__row:hover .xp__more,.xp__row.open .xp__more{max-height:260px;opacity:1}
 .xp__row:before{content:"";position:absolute;inset:0 calc(var(--pad)*-1);background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease);z-index:-1}
 .xp__row:hover:before{transform:scaleY(1)}
@@ -30,4 +30,8 @@
   .xp__row.open .xp__more{margin-top:10px}
 }
 
-.light-zone .meta,.light-zone .text-muted{color:#6a6a6e}
+/* Zone colors: the page flips to light while this zone is on screen, so its text has a value for each state
+   (dark state also applies off-screen and before JS runs). */
+.light-zone{--zone-muted:#9a9aa0;--zone-body:#d4d4d8;--zone-accent:var(--accent);--zone-line:rgba(236,236,236,.16)}
+body.is-light .light-zone{--zone-muted:#58585c;--zone-body:#2b2b2f;--zone-accent:#5c7a00;--zone-line:rgba(10,10,11,.16)}
+.light-zone .meta,.light-zone .text-muted{color:var(--zone-muted)}

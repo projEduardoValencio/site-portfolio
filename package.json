@@ -13,6 +13,7 @@
     "lenis": "1.1.13"
   },
   "devDependencies": {
+    "node-html-parser": "^9.0.7",
     "vite": "^7.0.0"
   },
   "description": "Eduardo Valencio — portfolio site"

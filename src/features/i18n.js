@@ -1,68 +1,45 @@
 /**
- * EN/PT switch. English is the markup default; elements opt in with
- * `data-i18n="key"` (inner HTML) or `data-i18n-attr="attribute:key"`, and the
- * Portuguese strings live in i18n/pt.js. Other modules react to LANG_EVENT.
+ * Language handling. English (/) and Portuguese (/pt/) are separate prerendered pages (see
+ * vite/seo-pages.js); the EN/PT switch is a plain link between them. This module only remembers the
+ * visitor's choice and sends first-time English-root visitors whose browser is Portuguese to /pt/.
  */
-import pt from '../i18n/pt.js';
-import { UI, META } from '../i18n/ui.js';
-import { $, $$ } from '../lib/env.js';
+import { UI } from '../i18n/ui.js';
+import { $$ } from '../lib/env.js';
 
-export const LANG_EVENT = 'langchange';
 const STORAGE_KEY = 'ev-lang';
-const DICTIONARIES = { pt };
 
-let lang = 'en';
-const bindings = [];
+const lang = document.documentElement.lang.startsWith('pt') ? 'pt' : 'en';
 
-export const getLang = () => lang;
+/** Text produced by JavaScript, in the language of the page. */
 export const t = (key) => UI[lang][key];
 
-export function initI18n() {
-  for (const el of $$('[data-i18n]')) {
-    bindings.push({ el, key: el.dataset.i18n, en: el.innerHTML });
-  }
-  for (const el of $$('[data-i18n-attr]')) {
-    const [attr, key] = el.dataset.i18nAttr.split(':');
-    bindings.push({ el, attr, key, en: el.getAttribute(attr) });
-  }
-  for (const button of $$('.lang button')) {
-    button.addEventListener('click', () => setLang(button.dataset.l, { persist: true }));
-  }
-  const initial = detectLang();
-  if (initial !== 'en') setLang(initial);
-}
-
-function detectLang() {
+function storedLang() {
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored in UI) return stored;
-  } catch {}
-  return navigator.language?.toLowerCase().startsWith('pt') ? 'pt' : 'en';
+    return stored in UI ? stored : null;
+  } catch {
+    return null;
+  }
 }
 
-export function setLang(next, { persist = false } = {}) {
-  lang = next in UI ? next : 'en';
-  const dictionary = DICTIONARIES[lang] ?? {};
+/**
+ * On the English root only: honour the stored choice, else the browser language. A direct /pt/ link
+ * always stays Portuguese. Returns true when it navigated away (the caller should stop booting).
+ */
+export function redirectToPreferredLanguage() {
+  if (lang !== 'en') return false;
+  const preferred = storedLang() ?? (navigator.language?.toLowerCase().startsWith('pt') ? 'pt' : 'en');
+  if (preferred === 'en') return false;
+  location.replace(`./pt/${location.search}${location.hash}`);
+  return true;
+}
 
-  for (const { el, attr, key, en } of bindings) {
-    const value = dictionary[key] ?? en;
-    if (attr) el.setAttribute(attr, value);
-    else el.innerHTML = value;
+export function initI18n() {
+  for (const link of $$('.lang a')) {
+    link.addEventListener('click', () => {
+      try {
+        localStorage.setItem(STORAGE_KEY, link.getAttribute('hreflang').startsWith('pt') ? 'pt' : 'en');
+      } catch {}
+    });
   }
-
-  document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
-  document.title = META[lang].title;
-  $('meta[name="description"]')?.setAttribute('content', META[lang].description);
-  for (const button of $$('.lang button')) {
-    const on = button.dataset.l === lang;
-    button.classList.toggle('on', on);
-    button.setAttribute('aria-pressed', on);
-  }
-
-  if (persist) {
-    try {
-      localStorage.setItem(STORAGE_KEY, lang);
-    } catch {}
-  }
-  document.dispatchEvent(new CustomEvent(LANG_EVENT, { detail: { lang } }));
 }

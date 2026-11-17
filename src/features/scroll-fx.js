@@ -1,7 +1,6 @@
 /** Scroll-driven animations: reveals, counters, parallax and the light/dark zone switch. */
 import { gsap, ScrollTrigger } from '../lib/gsap.js';
 import { $$ } from '../lib/env.js';
-import { LANG_EVENT } from './i18n.js';
 
 export function initScrollEffects() {
   for (const el of $$('.rv')) {
@@ -28,7 +27,6 @@ export function initScrollEffects() {
 
   gsap.to('.hero__title', {
     yPercent: -18,
-    opacity: 0.25,
     ease: 'none',
     scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
   });
@@ -52,7 +50,4 @@ export function initScrollEffects() {
     stagger: 0.08,
     scrollTrigger: { trigger: '#carousel', start: 'top 85%' },
   });
-
-  // Translated text changes layout, so trigger positions must be recomputed.
-  document.addEventListener(LANG_EVENT, () => requestAnimationFrame(() => ScrollTrigger.refresh()));
 }

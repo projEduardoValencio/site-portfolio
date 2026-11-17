@@ -6,11 +6,11 @@ export const UI = {
 
 export const META = {
   en: {
-    title: 'Eduardo Valencio — Secure by design',
-    description: 'Eduardo Valencio — full-stack engineer (.NET, Java, Angular) moving into Application Security. CompTIA Security+.',
+    title: 'Eduardo Valencio — Full-stack Developer & AppSec',
+    description: 'Eduardo Valencio — full-stack software developer (.NET, Java, Angular) from São Paulo, Brazil, moving into Application Security. CompTIA Security+.',
   },
   pt: {
-    title: 'Eduardo Valencio — Secure by design',
-    description: 'Eduardo Valencio — engenheiro full-stack (.NET, Java, Angular) em transição para Application Security. CompTIA Security+.',
+    title: 'Eduardo Valencio — Desenvolvedor Full-stack & AppSec',
+    description: 'Eduardo Valencio — desenvolvedor full-stack (.NET, Java, Angular) de São Paulo, em transição para Application Security. CompTIA Security+.',
   },
 };
