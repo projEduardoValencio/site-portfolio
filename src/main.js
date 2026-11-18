@@ -1,4 +1,5 @@
 import './styles/index.css';
+import { posthogLog } from './lib/posthog.js';
 import { $, reduceMotion } from './lib/env.js';
 import { initI18n, redirectToPreferredLanguage } from './features/i18n.js';
 import { initClock } from './features/clock.js';
@@ -17,6 +18,8 @@ import { playIntro } from './features/intro.js';
 import { playHeroEntrance } from './features/hero.js';
 
 function boot() {
+  posthogLog.info('portfolio boot started', { locale: document.documentElement.lang });
+
   // Everything interactive is wired up behind the preloader...
   initI18n();
   initClock();
@@ -40,6 +43,7 @@ function boot() {
       initManifesto();
       initScrollEffects();
     }
+    posthogLog.info('portfolio interactive experience ready', { reduced_motion: reduceMotion });
   });
 }
 

@@ -1,5 +1,6 @@
 /** Draggable work carousel with momentum, snap, arrows, keyboard and image parallax. */
 import { $, $$ } from '../lib/env.js';
+import posthog, { isPostHogEnabled } from '../lib/posthog.js';
 
 const pad = (n) => String(n).padStart(2, '0');
 
@@ -13,7 +14,7 @@ export function initCarousel() {
   let position = 0; // rendered offset, eases towards `target`
   let target = 0;
   let dragging = false;
-  let startX = 0, startTarget = 0, lastX = 0, moved = 0, velocity = 0;
+  let startX = 0, startTarget = 0, startIndex = 0, lastX = 0, moved = 0, velocity = 0;
   let raf = 0;
 
   const maxScroll = () => Math.max(0, track.scrollWidth - carousel.clientWidth + parseFloat(getComputedStyle(carousel).paddingLeft) * 2);
@@ -51,7 +52,16 @@ export function initCarousel() {
     updateCounter();
     requestRender();
   };
-  const goToIndex = (index) => moveTo(-index * stepSize());
+  const goToIndex = (index, interactionMethod, previousIndex = currentIndex()) => {
+    moveTo(-index * stepSize());
+    const workIndex = currentIndex();
+    if (interactionMethod && workIndex !== previousIndex && isPostHogEnabled) {
+      posthog.capture('work_carousel_navigated', {
+        work_index: workIndex + 1,
+        interaction_method: interactionMethod,
+      });
+    }
+  };
 
   carousel.addEventListener('pointerdown', (event) => {
     if (event.target.closest('a')) return;
@@ -59,6 +69,7 @@ export function initCarousel() {
     moved = 0;
     startX = lastX = event.clientX;
     startTarget = target;
+    startIndex = currentIndex();
     carousel.classList.add('is-drag');
     carousel.setPointerCapture(event.pointerId);
     requestRender();
@@ -80,7 +91,7 @@ export function initCarousel() {
     dragging = false;
     carousel.classList.remove('is-drag');
     const thrown = clamp(target + velocity * 12);
-    goToIndex(Math.round(-thrown / stepSize()));
+    goToIndex(Math.round(-thrown / stepSize()), 'drag', startIndex);
   };
   carousel.addEventListener('pointerup', endDrag);
   carousel.addEventListener('pointercancel', endDrag);
@@ -97,13 +108,13 @@ export function initCarousel() {
     moveTo(target - event.deltaX);
   }, { passive: false });
   carousel.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowRight') goToIndex(currentIndex() + 1);
-    else if (event.key === 'ArrowLeft') goToIndex(currentIndex() - 1);
+    if (event.key === 'ArrowRight') goToIndex(currentIndex() + 1, 'keyboard');
+    else if (event.key === 'ArrowLeft') goToIndex(currentIndex() - 1, 'keyboard');
     else return;
     event.preventDefault();
   });
-  $('#next').addEventListener('click', () => goToIndex(currentIndex() + 1));
-  $('#prev').addEventListener('click', () => goToIndex(currentIndex() - 1));
+  $('#next').addEventListener('click', () => goToIndex(currentIndex() + 1, 'arrow_button'));
+  $('#prev').addEventListener('click', () => goToIndex(currentIndex() - 1, 'arrow_button'));
   addEventListener('resize', () => moveTo(target));
 
   paint();
