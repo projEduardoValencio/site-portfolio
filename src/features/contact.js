@@ -2,7 +2,7 @@
 import { $, $$ } from '../lib/env.js';
 import { email, mailtoUrl, whatsappUrl } from '../data/contact.js';
 import { t } from './i18n.js';
-import posthog, { isPostHogEnabled } from '../lib/posthog.js';
+import { track } from '../lib/telemetry.js';
 
 async function copyText(text) {
   try {
@@ -41,9 +41,7 @@ export function initContact() {
       const link = event.target.closest('[data-contact]');
       if (!link) return;
       armContactLinks();
-      if (type === 'click' && isPostHogEnabled) {
-        posthog.capture('contact_link_opened', { contact_method: link.dataset.contact });
-      }
+      if (type === 'click') track('contact_link_opened', { contact_method: link.dataset.contact });
     }, { capture: true, passive: true });
   }
 
@@ -55,7 +53,7 @@ export function initContact() {
     const address = email();
     const copied = await copyText(address);
     toast.textContent = copied ? t('emailCopied') : address;
-    if (isPostHogEnabled) posthog.capture('email_copied', { copy_succeeded: copied });
+    track('email_copied', { copy_succeeded: copied });
     toast.classList.add('show');
     clearTimeout(timer);
     timer = setTimeout(() => toast.classList.remove('show'), 2200);

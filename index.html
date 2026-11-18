@@ -201,7 +201,7 @@
 
 <main id="top">
 <!-- HERO -->
-<section class="hero" id="hero">
+<section class="hero" id="hero" data-section="hero">
   <div class="hero__meta mono">
     <span data-i18n="available-for-application-security-roles" class="status"><i></i>Available for Application Security roles</span>
     <span class="clock" id="clock"><span data-clock-place>Local time</span> — <time data-clock-time>--:--:--</time></span>
@@ -249,13 +249,13 @@
 </div>
 
 <!-- MANIFESTO -->
-<section class="manifesto">
+<section class="manifesto" data-section="manifesto">
   <span data-i18n="01-the-shift" class="mono text-muted">(01) — The shift</span>
   <p id="manifesto" data-i18n="manifesto">I spent the last few years on the builder's side: APIs that move money, real-time dashboards, legacy systems becoming web apps. That's where I learned where software tends to give way — and that's exactly where I want to work now.</p>
 </section>
 
 <!-- STATS -->
-<section data-i18n-attr="aria-label:attr-numbers" class="stats" aria-label="Numbers">
+<section data-section="stats" data-i18n-attr="aria-label:attr-numbers" class="stats" aria-label="Numbers">
   <div class="stat rv"><div class="stat__n"><span data-count="70">0</span>%<sup>↓</sup></div><p data-i18n="lower-infrastructure-cost-for-a-cloud-ap">lower infrastructure cost for a cloud application, redesigned with AWS-recommended services — without giving up resilience or security.</p></div>
   <div class="stat rv"><div class="stat__n"><span data-count="4">0</span>+<sup data-i18n="years">years</sup></div><p data-i18n="writing-software-that-runs-in-production">writing software that runs in production across fintech, ERP and consulting.</p></div>
   <div class="stat rv"><div class="stat__n"><span data-count="25">0</span>%<sup>↑</sup></div><p data-i18n="more-actionable-insights-from-a-bi-layer">more actionable insights from a BI layer that unified ERP modules into reports and dashboards.</p></div>
@@ -263,7 +263,7 @@
 </section>
 
 <!-- WORK -->
-<section class="work" id="trabalho">
+<section class="work" id="trabalho" data-section="work">
   <div class="shead">
     <h2 data-i18n="selected-work" class="rv">Selected<br><span class="tech">work</span></h2>
     <div class="meta mono rv"><span data-i18n="02-selected-projects">(02) — Selected projects</span><span data-i18n="drag-or-use-the-arrows">Drag or use the arrows</span></div>
@@ -332,7 +332,7 @@
 
 <!-- LIGHT ZONE: experience + about + cert -->
 <div class="light-zone" id="lightzone">
-<section id="experiencia">
+<section id="experiencia" data-section="experience">
   <div class="shead">
     <h2 data-i18n="experience" class="rv">Experience</h2>
     <div class="meta mono rv"><span data-i18n="03-where-i-built">(03) — Where I built</span><span data-i18n="click-a-row-for-the-security-lens">Click a row for the security lens</span></div>
@@ -389,7 +389,7 @@
   </div>
 </section>
 
-<section class="about" id="sobre">
+<section class="about" id="sobre" data-section="about">
   <div class="portrait rv">
     <img data-i18n-attr="alt:attr-portrait-of-eduardo-valencio" src="assets/portrait.webp" width="800" height="1066" loading="lazy" decoding="async" alt="Portrait of Eduardo Valencio" id="pimg">
     <span class="portrait__cap mono">Eduardo Valencio</span>
@@ -410,7 +410,7 @@
   </div>
 </section>
 
-<section data-i18n-attr="aria-label:attr-certifications" class="cert" aria-label="Certifications">
+<section data-section="certifications" data-i18n-attr="aria-label:attr-certifications" class="cert" aria-label="Certifications">
   <div class="badge rv" id="badge" data-cursor="Sec+">
     <div class="badge__glare"></div>
     <div class="badge__top mono"><span data-i18n="05-certification">(05) — Certification</span><span>CompTIA</span></div>
@@ -428,7 +428,7 @@
 </div>
 
 <!-- STACK -->
-<section id="stack">
+<section id="stack" data-section="stack">
   <div class="shead">
     <h2 data-i18n="toolkit" class="rv">Toolkit</h2>
     <div class="meta mono rv"><span>(06) — Stack</span><span data-i18n="two-sides-of-the-same-code">Two sides of the same code</span></div>
@@ -449,7 +449,7 @@
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contato">
+<section class="contact" id="contato" data-section="contact">
   <p data-i18n="07-contact-open-to-application-security" class="contact__k mono">(07) — Contact · Open to Application Security roles</p>
   <a href="#contato" data-contact="email" class="contact__big" data-cursor="E-mail">
     <span class="line"><span data-i18n="let-s">Let's</span></span>
@@ -466,6 +466,7 @@
   <footer class="foot mono">
     <span>© 2026 Eduardo Valencio</span>
     <span data-i18n="design-code-by-eduardo-images-generated">Design &amp; code by Eduardo · images generated with Higgsfield</span>
+    <span data-i18n="anonymous-analytics-no-cookies">Anonymous analytics · no cookies</span>
     <a data-i18n="back-to-top" href="#top" data-hover>Back to top ↑</a>
   </footer>
 </section>

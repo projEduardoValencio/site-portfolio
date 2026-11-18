@@ -5,7 +5,7 @@
  */
 import { UI } from '../i18n/ui.js';
 import { $$ } from '../lib/env.js';
-import posthog, { isPostHogEnabled } from '../lib/posthog.js';
+import { track } from '../lib/telemetry.js';
 
 const STORAGE_KEY = 'ev-lang';
 
@@ -42,7 +42,7 @@ export function initI18n() {
       try {
         localStorage.setItem(STORAGE_KEY, selectedLanguage);
       } catch {}
-      if (isPostHogEnabled) posthog.capture('language_selected', { selected_language: selectedLanguage });
+      track('language_selected', { selected_language: selectedLanguage });
     });
   }
 }

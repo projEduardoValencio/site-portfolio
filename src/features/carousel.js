@@ -1,6 +1,6 @@
 /** Draggable work carousel with momentum, snap, arrows, keyboard and image parallax. */
 import { $, $$ } from '../lib/env.js';
-import posthog, { isPostHogEnabled } from '../lib/posthog.js';
+import { track as trackEvent } from '../lib/telemetry.js'; // `track` is the carousel element below
 
 const pad = (n) => String(n).padStart(2, '0');
 
@@ -55,11 +55,8 @@ export function initCarousel() {
   const goToIndex = (index, interactionMethod, previousIndex = currentIndex()) => {
     moveTo(-index * stepSize());
     const workIndex = currentIndex();
-    if (interactionMethod && workIndex !== previousIndex && isPostHogEnabled) {
-      posthog.capture('work_carousel_navigated', {
-        work_index: workIndex + 1,
-        interaction_method: interactionMethod,
-      });
+    if (interactionMethod && workIndex !== previousIndex) {
+      trackEvent('work_carousel_navigated', { work_index: workIndex + 1, interaction_method: interactionMethod });
     }
   };
 

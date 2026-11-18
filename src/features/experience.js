@@ -1,6 +1,6 @@
 /** Experience accordion: one row open at a time; the first row ships open in the markup. */
 import { $, $$ } from '../lib/env.js';
-import posthog, { isPostHogEnabled } from '../lib/posthog.js';
+import { track } from '../lib/telemetry.js';
 
 export function initExperience() {
   const rows = $$('.xp__row');
@@ -16,9 +16,7 @@ export function initExperience() {
       const open = !row.classList.contains('open');
       for (const other of rows) setOpen(other, false);
       setOpen(row, open);
-      if (open && isPostHogEnabled) {
-        posthog.capture('experience_detail_opened', { experience_position: index + 1 });
-      }
+      if (open) track('experience_detail_opened', { experience_position: index + 1 });
     });
   }
 }

@@ -1,5 +1,4 @@
 import './styles/index.css';
-import { posthogLog } from './lib/posthog.js';
 import { $, reduceMotion } from './lib/env.js';
 import { initI18n, redirectToPreferredLanguage } from './features/i18n.js';
 import { initClock } from './features/clock.js';
@@ -16,10 +15,10 @@ import { initManifesto } from './features/manifesto.js';
 import { initScrollEffects } from './features/scroll-fx.js';
 import { playIntro } from './features/intro.js';
 import { playHeroEntrance } from './features/hero.js';
+import { initEngagement } from './features/engagement.js';
+import { startTelemetry } from './lib/telemetry.js';
 
 function boot() {
-  posthogLog.info('portfolio boot started', { locale: document.documentElement.lang });
-
   // Everything interactive is wired up behind the preloader...
   initI18n();
   initClock();
@@ -43,7 +42,8 @@ function boot() {
       initManifesto();
       initScrollEffects();
     }
-    posthogLog.info('portfolio interactive experience ready', { reduced_motion: reduceMotion });
+    initEngagement(); // after the intro, so preloader time is not counted as reading the hero
+    startTelemetry();
   });
 }
 

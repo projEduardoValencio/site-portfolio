@@ -53,3 +53,15 @@ The email address and WhatsApp number are not in the HTML. `src/data/contact.js`
 `features/contact.js` sets the real `mailto:`/`wa.me` links on the first hover/focus/touch of a contact link.
 This only stops scrapers that read markup; to stop publishing the real address, put a forwarding alias on the
 domain (e.g. `contato@eduardovalencio.com.br`, free with Cloudflare Email Routing or ImprovMX) and replace `EMAIL`.
+
+## Telemetry
+
+Anonymous, cookieless analytics with [Umami Cloud](https://umami.is) (page views, events) and
+[PostHog](https://posthog.com) (events, exceptions; `persistence: 'memory'`, no autocapture, no session recording).
+`lib/telemetry.js` is the only entry point (`track(name, props)`); `features/engagement.js` records sections seen,
+time per section, scroll depth, in-page navigation and outbound links. Events never carry personal data.
+
+It is **off** unless the build is a production build served from a host listed in `VITE_TELEMETRY_DOMAINS`, and it
+honours Do Not Track. Variables (see `.env.example`; in CI they are repository *secrets*, wired in `deploy.yml`):
+`VITE_TELEMETRY_DOMAINS`, `VITE_UMAMI_WEBSITE_ID`, `VITE_POSTHOG_KEY`, `VITE_POSTHOG_HOST`.
+To turn it off, empty `VITE_TELEMETRY_DOMAINS`. Plan and tasks: `spec/telemetry/`.

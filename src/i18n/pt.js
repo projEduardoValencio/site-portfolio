@@ -107,5 +107,6 @@ export default {
   "attr-numbers": "Números",
   "attr-certifications": "Certificações",
   "attr-social-links": "Redes",
-  "attr-quick-actions": "Ações rápidas"
+  "attr-quick-actions": "Ações rápidas",
+  "anonymous-analytics-no-cookies": "Métricas anônimas · sem cookies"
 };
