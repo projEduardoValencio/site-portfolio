@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "gsap": "3.12.5",
-    "lenis": "1.1.13"
+    "lenis": "1.1.13",
+    "posthog-js": "^1.451.0"
   },
   "devDependencies": {
     "node-html-parser": "^9.0.7",

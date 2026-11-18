@@ -5,6 +5,7 @@
  */
 import { UI } from '../i18n/ui.js';
 import { $$ } from '../lib/env.js';
+import posthog, { isPostHogEnabled } from '../lib/posthog.js';
 
 const STORAGE_KEY = 'ev-lang';
 
@@ -37,9 +38,11 @@ export function redirectToPreferredLanguage() {
 export function initI18n() {
   for (const link of $$('.lang a')) {
     link.addEventListener('click', () => {
+      const selectedLanguage = link.getAttribute('hreflang').startsWith('pt') ? 'pt' : 'en';
       try {
-        localStorage.setItem(STORAGE_KEY, link.getAttribute('hreflang').startsWith('pt') ? 'pt' : 'en');
+        localStorage.setItem(STORAGE_KEY, selectedLanguage);
       } catch {}
+      if (isPostHogEnabled) posthog.capture('language_selected', { selected_language: selectedLanguage });
     });
   }
 }
