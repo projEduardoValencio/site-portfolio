@@ -1,4 +1,6 @@
 import './styles/index.css';
+import { inject } from "@vercel/analytics"
+
 import { $, reduceMotion } from './lib/env.js';
 import { initI18n, redirectToPreferredLanguage } from './features/i18n.js';
 import { initClock } from './features/clock.js';
@@ -47,4 +49,7 @@ function boot() {
   });
 }
 
-if (!redirectToPreferredLanguage()) boot();
+if (!redirectToPreferredLanguage()) {
+  inject();
+  boot();
+}
